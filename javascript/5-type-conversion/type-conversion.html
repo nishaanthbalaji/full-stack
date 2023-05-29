@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descripton" content="type-conversion" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   // TYPES OF CONVERSION
+      //   // STRING CONVERSION
+      let isAdmin = true;
+      console.log(isAdmin);
+      console.log(typeof isAdmin);
+      console.log(typeof String(isAdmin));
+
+      //   //   numeric convertion
+      let age = 30;
+      console.log(age);
+      console.log(typeof age);
+      console.log(typeof Number(age));
+      let numberOne = prompt("enter the value:1", 10);
+      let numberTwo = prompt("Enter the value:2", 10);
+      let sum = Number(numberOne) + Number(numberTwo);
+      console.log(`the sum of${numberOne} n ${numberTwo} is :${sum}`);
+
+      //   UNARY PLUS
+      let numberOn = prompt("enter the value:1", 10);
+      let numberTw = prompt("Enter the value:2", 10);
+      let add = +numberOn + +numberTw;
+      console.log(`the sum of ${numberOn} n ${numberTw} is: ${add}`);
+      //   Boolean conversion
+      let isAdminstater = null;
+
+      console.log(Boolean(isAdminstater));
+      console.log(Boolean(""));
+      console.log(Boolean(" "));
+      console.log(Boolean("0"));
+      console.log(Boolean(null));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="dom" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="para" class="yo">this is paragraph</p>
+
+    <ul id="list">
+      <li class="list-items">home</li>
+      <li class="list-items">about</li>
+      <li class="list-items">projects</li>
+      <li class="list-items">contact</li>
+    </ul>
+
+    <hr />
+    <form action="#">
+      <p>
+        <label for="subjects">select subject</label>
+        <input
+          type="radio"
+          name="subject"
+          id="subject-1"
+          value="english"
+        />english
+        <input type="radio" name="subject" id="subject-2" value="maths" />maths
+        <input
+          type="radio"
+          name="subject"
+          id="subject-3"
+          value="physics"
+        />pysics
+        <input
+          type="radio"
+          name="subject"
+          id="subject-4"
+          value="chemistry"
+        />chemistry
+      </p>
+    </form>
+    <script>
+      // DOM selectors
+      // 1.document.getElementById()
+      // 2. document.getElementByVlassName()
+      //3.document.getElementByTagName()
+      //4.document.getElementByName()
+
+      // special cases
+      // 5. document.querySelector()
+      // 6. document.querySelectorAll()
+
+      // document.getelementbyid()
+      // syntax
+      // document.getElementById("idname")==> return html element
+      // (in this element is considered as object)
+      let para = document.getElementById("para");
+      console.log(para);
+      console.log(para.className);
+      console.log(para.id);
+      console.log(para.textContent);
+
+      // document.getElementByClassName("className")===> return htmlcollection of<element> like array but actually it is not a array
+      let listItems = document.getElementsByClassName("list-items");
+      console.log(listItems);
+      console.log(listItems[0]);
+      console.log(listItems[1]);
+      console.log(listItems[2]);
+      console.log(listItems[3]);
+
+      for (const list of listItems) {
+        console.log(list);
+      }
+
+      //Array.from(arraylikeelements)==>covert array like elements into actual array
+      let listArr = Array.from(listItems);
+      console.log(listArr);
+      // in case of html collection and node it is like array but actually not array. in that array like html collection nad node list i can access the elements inside that by using index.
+
+      //but i cant use array methods. to use array methods in that so only i convert that into array
+      let listTexArr = listArr.map((list) => list.className);
+      console.log(listTexArr);
+
+      //document.getElementsByTagName()===>return html collection of <element> like array (but actually it is not a array)
+      // syntax
+      //document.getsElementsByTagName("tag name")
+      let liList = document.getElementsByTagName("li");
+      console.log(liList);
+      let lili = document.getElementsByTagName("li")[2];
+      console.log(lili);
+      //document.getElementByname()
+      // syntax
+      //document.getElementByname("nameAttributevalue")==>return array like nodelistof<htmlelement>
+      let subject = document.getElementsByName("subject");
+      console.log(subject);
+      let values = Array.from(subject).map((subject) => subject.value);
+      console.log(values);
+      // document.querySelector("cssSelector"); ==>this can be used if i want to select single element
+      // it will return like object
+      let head = document.querySelector("#para");
+      console.log(head);
+
+      //document.queryselectorAll("cssSelector")==> this can be used if i want to select multiple element
+      // it retun array like nodelist of html<element>
+      let list = document.querySelectorAll("#list>.list-items");
+      console.log(list);
+    </script>
+  </body>
+</html>

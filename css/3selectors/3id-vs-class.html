@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="id vs class" />
+    <style>
+      #green,
+      .text {
+        color: green;
+        font-size: 24px;
+        text-align: center;
+      }
+      .red {
+        color: red;
+      }
+      p#green {
+        text-shadow: 1px 1px 5px red;
+      }
+    </style>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>heading</h1>
+    <p id="green" class="red text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+      voluptate officiis provident nulla cum inventore, exercitationem quia ab
+      nam natus. Corrupti iusto esse magni accusantium harum reprehenderit
+      voluptate sunt odit?
+    </p>
+    <h2>sub heading</h2>
+    <p id="blue">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius autem
+      deleniti saepe libero, quibusdam, est ipsa porro veniam voluptatem
+      temporibus, accusantium exercitationem pariatur excepturi aperiam nulla
+      perferendis distinctio ea mollitia?
+    </p>
+    <p class="green">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt placeat
+      dignissimos<span class="text">
+        aspernatur dolorum! Cumque rerum maxime repudiandae ipsam impedit dolore
+        commodi, sit excepturi.</span
+      >
+      Expedita optio enim perferendis vitae qui numquam.
+    </p>
+    <div>
+      <p id="green">Lorem ipsum dolor sit amet consectetur adipisicing</p>
+    </div>
+  </body>
+</html>

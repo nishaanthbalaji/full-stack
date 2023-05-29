@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="hoisting" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // hoisting
+      //1. function
+      // 2. var , let , const
+
+      // function===> hoisting means take that to the top of the javascript so that it can be called n
+      //accessable even before the function is being return  as hoisting is done
+      //
+      displayName("john");
+      function displayName(name) {
+        console.log(name);
+        innerFunction();
+        function innerFunction() {
+          // in case of innerfunction its scope is limited only to the extent main function if i call the inner function out side main function it wont work but hoisiting will be done also for inner function but it wont be taken to top of javascript but it will be taken to the top of the main function  so it can be called and accesable from any where in the inner function it will work as hoisting is done
+          console.log("inner function");
+        }
+        innerFunction();
+      }
+      // innerFunction(); // inner function scope is limited it can be called only inside the function
+
+      //var ===> if i use var hoisting will be done it will take to top of javascript i can call and access before declration
+      // default value of value of var is empty space  if for var variableName;
+      console.log(name);
+      var name;
+      console.log(name);
+      // default value of var is undefined if for var varaiableName="value"
+      console.log(jo);
+      var jo = "john";
+      console.log(jo);
+
+      //let
+      // console.log(newName); // in case of let n const hoisting will happen it will take it to the top of javascript but i can access it only after declration
+      //console.log(newName);
+      let newName = "john";
+      console.log(newName);
+
+      // const
+      // console.log(lastName); //in case of let n const hoisting will happen it will take it to the top of javascript but i can access it only after declration
+
+      const lastName = "jack";
+      console.log(lastName);
+
+      class ClassName {
+        name = "john";
+        age = 25;
+        UserDetails() {
+          console.log(this.name, this.age);
+        }
+      }
+      let objNmae = new ClassName();
+      console.log(objNmae);
+      objNmae.UserDetails();
+
+      let userOne = new UserDetails();
+      userOne.printNameAge();
+      class UserDetails {
+        name = "john";
+        age = 24;
+        printNameAge() {
+          console.log(this.name);
+          console.log(this.age);
+        }
+      }
+    </script>
+  </body>
+</html>

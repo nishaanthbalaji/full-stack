@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="form" />
+
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background: url(./pexels-max-fischer-5868740.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .success {
+      color: green;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+  <body>
+    <h2>forms</h2>
+    <form action="#" id="form">
+      <p>
+        <input
+          type="text"
+          name="fullName"
+          id="username"
+          placeholder="enter the username"
+          class="group"
+        />
+        <small></small>
+      </p>
+      <p>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="enter the email"
+          class="group"
+        />
+        <small></small>
+      </p>
+      <p>
+        <input
+          type="text"
+          name="password"
+          id="password"
+          class="group"
+          placeholder="enter the password"
+        />
+        <small></small>
+      </p>
+      <p>
+        <textarea
+          name="message"
+          id="message"
+          cols="21"
+          rows="5"
+          class="group"
+        ></textarea>
+        <small></small>
+      </p>
+
+      <p id="radiopara"></p>
+      <p>select any one</p>
+      <label for="male">
+        <input
+          type="radio"
+          name="gender"
+          id="male"
+          value="male"
+          class="rr"
+        />MALE</label
+      >
+      <label for="female">
+        <input
+          type="radio"
+          name="gender"
+          id="female"
+          value="female"
+          class="rr"
+        />FEMALE
+      </label>
+      <label for="others">
+        <input
+          type="radio"
+          name="gender"
+          id="others"
+          value="others"
+          class="rr"
+        />OTHERS
+      </label>
+      <!-- <label for="chemistry">
+        <input
+          type="radio"
+          name="subject"
+          id="chemistry"
+          value="chemistry"
+          class="rr"
+        />chemistry
+      </label> -->
+      <small id="radiosmall"></small>
+
+      <p>prefered languages</p>
+      <label for="english">
+        <input
+          type="checkbox"
+          name="subject"
+          id="english"
+          value="english"
+          class="cc"
+        />English</label
+      >
+
+      <label for="maths">
+        <input
+          type="checkbox"
+          name="subject"
+          id="maths"
+          value="tamil"
+          class="cc"
+        />Maths
+      </label>
+      <label for="physics">
+        <input
+          type="checkbox"
+          name="subject"
+          id="physics"
+          value="telugu"
+          class="cc"
+        />physics
+      </label>
+      <label for="chemistry">
+        <input
+          type="checkbox"
+          name="subject"
+          id="chemistry"
+          value="malayalam"
+          class="cc"
+        />chemistry
+      </label>
+      <small id="smallcheck"></small>
+      <p>
+        <input type="submit" value="submit" id="submit" />
+        <input type="reset" value="clear" id="clear" />
+      </p>
+
+      <!-- <p>
+       
+        <button id="clrbtn" type="reset">clear</button>
+      </p> -->
+    </form>
+    <p><button id="register">register</button></p>
+    <p>ALREADY registered?<a href="./login.html">click here</a></p>
+
+    <script>
+      // forms
+
+      // two types
+      // selecting the html forms
+      // type 1
+      // document.forms=>return all the forms in the document as array
+      // console.log(document.forms[0][0])
+      // console.log(document.forms);
+      // console.log(document.forms[0][0]);
+      // console.log(document.forms[0][1]);
+      // console.log(document.forms[0][2]);
+      // console.log(document.forms[0][3]);
+
+      // // access input element values
+      // // use value
+      // let username = document.forms[0][0];
+      // // username.value = "john";
+      // console.log(username.value);
+      // let email = document.forms[0][1];
+      // let message = document.forms[0][2];
+      // let submitbtn = document.forms[0][3];
+
+      // let clearbtm = document.forms[0][4];
+
+      // //type 2
+      // let form = document.querySelector("#form");
+      // console.log(form);
+      // console.log(form.elements);
+      // console.log(form.elements[0]);
+      // console.log(form.elements[1]);
+      // console.log(form.elements[2]);
+
+      // console.log(form.elements[3]);
+
+      // // if i press submit everything i enter will resfresh as destination of the form not given
+      // // to avoid that
+      // form.addEventListener("submit", (ev) => {
+      //   ev.preventDefault(); // the submit is the event  which is going to happen here. so name we keep for parameter is the name for event here submit event name is ev . to access the event i can use ev
+
+      //   // prevent default is not a property to event it is a method likr set( ) , add() , setattribute
+
+      // console.log(document.forms);
+      //         for (const ele of document.forms[0]) {
+      //           // console.log(ele.value);
+      //           if (ele.value) {
+      //             let nextele = ele.nextElementSibling;
+      //             if (nextele.tagName === "SMALL") {
+      //               nextele.className = "success";
+      //               nextele.textContent = `${ele.value} is added sucessfully`;
+      //             }
+      //           } else {
+      //             let nextele = ele.nextElementSibling;
+      //             if (nextele?.tagName === "SMALL") {
+      //               // optional chaining if there is tagame small in next element then error class will come usually if some thing not there r not created that name we give in javascript it will so as error in that case if before ? given means even though nothing is there like that then it wont show error if something like that it will work or elese it will skip.
+      //               nextele.className = "error";
+      //               nextele.textContent = `please enter the ${ele.name}`;
+      //             }
+      //           }
+      //         }
+      //       });
+      //     let formm=document.querySelector("#form");
+      //     formm.addEventListener("submit", (e)=>{
+      // e.preventDefault()
+
+      //     for (const input of document.forms[0]){
+      // input.addEventListener("change" , ()=>{
+      //   if (input.value){
+
+      //   }
+      // })
+      //
+      // }
+
+      // let firstname=document.forms[0][0];
+      // if(firstname.value){
+
+      //  let nextele = ele.nextElementSibling;
+      //             if (nextele.tagName === "SMALL") {
+      //               nextele.className = "success";
+      //               nextele.textContent = `${ele.value} is added sucessfully`;
+      //             }
+      //           } else {
+      //             let nextele = ele.nextElementSibling;
+      //             if (nextele?.tagName === "SMALL") {
+      //               // optional chaining if there is tagame small in next element then error class will come usually if some thing not there r not created that name we give in javascript it will so as error in that case if before ? given means even though nothing is there like that then it wont show error if something like that it will work or elese it will skip.
+      //               nextele.className = "error";
+      //               nextele.textContent = `please enter the ${ele.name}`;
+      //             }
+
+      //}
+
+      //  });
+      let selectedOption;
+      let checkOptions = [];
+      let form = document.querySelector("#form");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let groups = document.querySelectorAll(".group");
+        for (const inv of groups) {
+          console.log(inv);
+          if (inv.value) {
+            let nextelem = inv.nextElementSibling;
+            if (nextelem.tagName === "SMALL") {
+              nextelem.className = "success";
+              nextelem.textContent = `${inv.value} is added successfully`;
+            }
+          } else {
+            let nextele = inv.nextElementSibling;
+            if (nextele?.tagName === "SMALL") {
+              nextele.className = "error";
+              nextele.textContent = `please enter the ${inv.name}`;
+            }
+          }
+        }
+        let radios = document.querySelectorAll(".rr");
+        for (const ele of radios) {
+          if (ele.checked) {
+            selectedOption = ele.value;
+          }
+        }
+        let smalladd = document.querySelector("#radiosmall");
+        smalladd.className = selectedOption ? "success" : "error";
+        smalladd.textContent = selectedOption
+          ? `you selected:${selectedOption}`
+          : "you need to select any element";
+
+        let addsmall = document.querySelectorAll(".cc");
+        console.log(addsmall);
+        for (const all of addsmall) {
+          console.log(all);
+          if (all.checked) {
+            checkOptions.push(all.value);
+          }
+        }
+        console.log(checkOptions);
+        let added = document.querySelector("#smallcheck");
+        added.className = checkOptions.length != 0 ? "success" : "error";
+        added.textContent =
+          checkOptions.length != 0
+            ? ` you have selected:${checkOptions.join(", ")}`
+            : "you have not selected any option";
+        checkOptions = [];
+      });
+
+      let register = document.querySelector("#register");
+      let username = form.elements[0];
+      let email = form.elements[1];
+      let password = form.elements[2];
+      let text = form.elements[3];
+      register.addEventListener("click", (e) => {
+        e.preventDefault();
+        let userObj = {
+          id: Math.floor(Math.random() * 1000),
+          username: username.value,
+          email: email.value,
+          password: password.value,
+          text: text.value,
+        };
+        localStorage.setItem(userObj.id, JSON.stringify(userObj));
+        alert("user created successfully");
+        window.location.href = "./login.html";
+      });
+    </script>
+  </body>
+</html>

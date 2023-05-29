@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="find" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let superMarket = [
+        {
+          title: "brown eggs",
+          type: "diary",
+          price: 28.1,
+          height: 600,
+          rating: 4,
+          descrption: " raw organic brown eggs in a basket",
+          width: 400,
+        },
+        {
+          title: "strawberry",
+          type: "fruit",
+          price: 29.45,
+          height: 450,
+          rating: 4,
+          descrption: "sweet fresh strawberry on the wood table",
+          width: 299,
+        },
+        {
+          title: "pesto with basil",
+          type: "vegetable",
+          price: 18.19,
+          height: 450,
+          rating: 2,
+          descrption: " italian traditional pesto with basil , cheese and oil",
+          width: 299,
+        },
+        {
+          title: "smoothie with sia seeds",
+          type: "fruit",
+          price: 25.56,
+          height: 600,
+          rating: 5,
+          descrption:
+            " glass of red strawberry with cia seeds over wooden table",
+          width: 900,
+        },
+        {
+          title: "corn",
+          type: "vegetable",
+          price: 22.97,
+          height: 600,
+          rating: 4,
+          descrption: " raw fresh aspiring salad",
+          width: 400,
+        },
+        {
+          title: "lemon and salt ",
+          type: "fruit",
+          price: 28.1,
+          height: 450,
+          rating: 5,
+          descrption: "rosemarry lemon and salt on the table",
+          width: 299,
+        },
+        {
+          title: "fresh tomato",
+          type: "vegetable",
+          price: 16.3,
+          height: 600,
+          rating: 2,
+          descrption: " fresh tomato juice with basil",
+          width: 903,
+        },
+        {
+          title: "healthy breakfast",
+          type: "fruit",
+          price: 13.02,
+          height: 450,
+          rating: 2,
+          descrption: " healthy breakfast set. with rice ceral ",
+          width: 300,
+        },
+        {
+          title: "butter milk",
+          type: "diary",
+          price: 13.02,
+          height: 450,
+          rating: 2,
+          descrption: " cooling for body ",
+          width: 300,
+        },
+      ];
+
+      //find()
+      // find the element with rating >=3
+      let ratingAboveEqualToThree = superMarket.find(
+        (elements, index, array) => {
+          return elements.rating >= 3;
+        }
+      );
+
+      ratingAboveEqualToThree
+        ? console.log(ratingAboveEqualToThree)
+        : console.log("no rating is above or equal to 3");
+
+      let elementVegetable = superMarket.find(
+        (ele) => ele.type === "vegetable"
+      );
+
+      elementVegetable.length !== 0
+        ? console.log(elementVegetable)
+        : console.log("no vegetables");
+
+      let priceBelow15 = superMarket.find((element) => element.price < 15);
+
+      priceBelow15
+        ? console.log(priceBelow15)
+        : console.log("price is above 15");
+
+      let titleWithLemon = superMarket.find((elements) =>
+        elements.title.includes("lemon")
+      );
+
+      titleWithLemon.length !== 0
+        ? console.log(titleWithLemon)
+        : console.log("notittle with lemon");
+
+      let elementWithHeightAndWidth = superMarket.find((ele) => {
+        return ele.height === 450 && ele.width === 450;
+      });
+
+      elementWithHeightAndWidth
+        ? console.log(elementWithHeightAndWidth)
+        : console.log("no element");
+
+      // filter
+      let ratingbelow2 = superMarket.filter((ele) => ele.rating < 2);
+
+      ratingbelow2.length !== 0
+        ? console.log(ratingbelow2)
+        : console.log("no element has rating below 2");
+
+      let diary = superMarket.filter((element) => {
+        return element.type === "diary";
+      });
+      diary ? console.log(diary) : console.log("there is no diary");
+
+      let priceAbove20 = superMarket.filter((el) => el.price > 20);
+      priceAbove20.length !== 0
+        ? console.log(priceAbove20)
+        : console.log("no elements has price above 20");
+
+      let titleWith = superMarket.filter((element) => {
+        return element.title.includes("with");
+      });
+      titleWith ? console.log(titleWith) : console.log("no title  has with ");
+
+      let heightAndWithEqualTo600 = superMarket.filter(
+        (ele) => ele.height === 600 && ele.width === 600
+      );
+
+      heightAndWithEqualTo600.length !== 0
+        ? console.log(heightAndWithEqualTo600)
+        : console.log("no element has height and width equal to 600");
+
+      let addIsAvailable = superMarket.map((element) => {
+        return {
+          ...element,
+          isAvailable: true,
+        };
+      });
+
+      console.log(addIsAvailable);
+
+      let average = superMarket.reduce((acc, element) => {
+        return acc + element.rating;
+      }, 0);
+      console.log(average);
+      let averageRating = average / superMarket.length;
+      console.log(averageRating);
+
+      let height = superMarket.reduce((acc, ele) => {
+        return acc + ele.height;
+      }, 0);
+      console.log(height);
+      let averageHeight = height / superMarket.length;
+      console.log(averageHeight);
+
+      let width = superMarket.reduce((acc, ele) => {
+        return acc + ele.width;
+      }, 0);
+      console.log(width);
+      let averageWidth = width / superMarket.length;
+      console.log(averageWidth);
+
+      let aPrice = superMarket.reduce((ace, element) => {
+        return element.price + ace;
+      }, 0);
+      console.log(aPrice);
+      let avgPrice = aPrice / superMarket.length;
+      console.log(avgPrice);
+
+      let filterDiary = superMarket.filter((ele) => {
+        return ele.type === "diary";
+      });
+      console.log(filterDiary);
+      let rating = filterDiary.reduce((ace, element) => {
+        return ace + element.rating;
+      }, 0);
+      console.log(rating);
+
+      let averageRatingDiary = rating / filterDiary.length;
+      console.log(averageRatingDiary);
+
+      let filterVegetable = superMarket.filter((ele) => {
+        return ele.type === "vegetable";
+      });
+      console.log(filterVegetable);
+
+      let price = filterVegetable.reduce((ace, ele) => {
+        return ace + ele.price;
+      }, 0);
+      console.log(price);
+
+      let averageVegetablePrice = price / filterVegetable.length;
+      console.log(averageVegetablePrice);
+
+      let filterFruit = superMarket.filter((ele) => {
+        return ele.type === "fruit";
+      });
+      let addIsAvailablee = filterFruit.map((element) => {
+        return {
+          ...element,
+          isAvailable: true,
+        };
+      });
+      console.log(addIsAvailablee);
+
+      let slectDiary = superMarket
+        .filter((ele) => {
+          return ele.type === "diary" || ele.type === "vegetable";
+        })
+        .map((filteredProduct) => {
+          if (filteredProduct.type === "diary") {
+            return {
+              ...filteredProduct,
+              isAvailable: true,
+            };
+          } else {
+            return {
+              ...filteredProduct,
+              isAvailable: false,
+            };
+          }
+        });
+      console.log(slectDiary);
+      // let addIsAvailableToDiary = slectDiary.map((element) => {
+      //   return {
+      //     ...element,
+      //     isAvailable: true,
+      //   };
+      // });
+
+      // console.log(addIsAvailableToDiary);
+
+      // let selectVegetable = superMarket.filter((element) => {
+      //   return element.type === "vegetable";
+      // });
+      // console.log(selectVegetable);
+
+      // let addIsAvailableTovegetable = selectVegetable.map((element) => {
+      //   return {
+      //     ...element,
+      //     isAvailable: false,
+      //   };
+      // });
+      // console.log(addIsAvailableTovegetable);
+    </script>
+  </body>
+</html>

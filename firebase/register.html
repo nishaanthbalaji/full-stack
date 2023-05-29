@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="register" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Register form</h2>
+    <form action="#">
+      <p>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="enter the username"
+        />
+      </p>
+      <p>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="enter the email"
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="enter the password"
+        />
+      </p>
+      <p>
+        <input type="submit" value="submit" id="submit-btn" />
+        <input type="reset" value="clear" id="clear-btn" />
+      </p>
+    </form>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.22.1/firebase/auth";
+      import {
+        getDatabase,
+        ref,
+        set,
+      } from "https://www.gstatic.com/firebasejs/9.22.1/firebase/database";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAwQ8l_xX-KEs75s79_CcPxmuVpyuh5p0U",
+        authDomain: "snow-leopard-ec42e.firebaseapp.com",
+        projectId: "snow-leopard-ec42e",
+        storageBucket: "snow-leopard-ec42e.appspot.com",
+        messagingSenderId: "238986926777",
+        appId: "1:238986926777:web:3bf7e7cf3db7de58c9d968",
+        databaseURL:
+          "https://snow-leopard-ec42e-default-rtdb.asia-southeast1.firebasedatabase.app/",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      const auth = getAuth(app); // get auth is a promise method
+
+      // Initialize Realtime Database and get a reference to the service
+      const database = getDatabase(app);
+
+      let submit = document.querySelector("#submit-btn");
+
+      submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        let username = document.querySelector("#username").value;
+        let email = document.querySelector("#email").value;
+        let password = document.querySelector("#password").value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            const userId = userCredential.user.uid;
+            set(ref(database, "users/" + userId), {
+              userID: userId,
+              password: password,
+              email: email,
+            });
+            setTimeout(() => {
+              window.location.href = "./signin.html";
+            }, 2000);
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+          });
+      });
+    </script>
+  </body>
+</html>

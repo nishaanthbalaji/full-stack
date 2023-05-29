@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="set" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // set
+      // set will have key only
+      // set can avoid duplicate entry but array cannot
+
+      // create
+      let set = new Set();
+      console.log(set);
+
+      // methods and properties
+      //set.add()
+      // set.has()
+      // set.delete()
+      // set.clear()
+      // keys()
+      // values()
+      // for each()
+
+      // size
+
+      let fruit = new Set();
+      // add()
+      fruit.add("apple");
+      fruit.add("orange");
+      fruit.add("mango");
+      fruit.add("apple");
+      fruit.add("mango"); // value only can be  given inside  the set but that value is also considered as key . in set key & value both are same
+
+      fruit.add("mango");
+      fruit.add("orange");
+      fruit.add("apple");
+      fruit.add("mango");
+      fruit.add("orange");
+      console.log(fruit);
+
+      // key ()
+      console.log(fruit.keys());
+
+      // values()
+      console.log(fruit.values());
+      // foreach
+      fruit.forEach((value, key) => {
+        console.log(`key is ${key} n the value is ${value}`);
+      });
+
+      let newArr = ["john", "jack", "marry", "john", "jack"];
+      console.log(newArr);
+
+      // another way to create set
+      let demo = new Set([1, 2, 3]);
+      console.log(demo);
+      // map relate to obj
+      //set relate to array
+
+      // convert array into set  and set into array( there is no specific  code like object.enteries or object.from Entries for conversion
+      // convert array into set
+      let nameSet = new Set(newArr);
+      console.log(nameSet);
+
+      //  convert set into array
+      console.log([...nameSet]);
+      console.log(nameSet);
+
+      let john = { name: "john", age: 25 };
+      let johnNew = john;
+      console.log(john);
+      console.log(johnNew);
+
+      johnNew.city = "chennai";
+      console.log(john);
+      console.log(johnNew);
+      // as value is common for both the variable anything i add in one variable it will go n add to common value of both variable
+
+      // to avoid this
+      let joe = { name: "joe", age: 25 };
+      let joeNew = { ...joe };
+      console.log(joe);
+      console.log(joeNew);
+
+      joeNew.city = "cbe";
+      console.log(joe);
+      console.log(joeNew);
+
+      // in case of array
+      let newArrOne = ["john", "jack", "marry"];
+      let newArrTwo = [...newArrOne];
+
+      console.log(newArrOne);
+      console.log(newArrTwo);
+      newArrTwo[3] = "robbert";
+      console.log(newArrOne);
+      console.log(newArrTwo);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="assesment" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function hello(name) {
+        console.log(`hello ${name}`);
+      }
+      hello("nishaanth");
+
+      function a() {
+        console.log("hello a!");
+      }
+      a();
+      function b() {
+        console.log("Hello b!");
+      }
+
+      b();
+      //   function greet(name) {
+      //     return console.log(name);
+      //   }
+      //   greet("ben stokes");
+      function greet(name) {
+        return name;
+      }
+      let salution = greet("jos butler");
+      console.log(salution);
+
+      function echo(echoskillsafari, echoedukeys) {
+        console.log(echoskillsafari);
+        console.log(echoedukeys);
+      }
+      echo("skillsafari", "edukeys");
+
+      function greeet(skillsafari) {
+        console.log(`Hello ${skillsafari} !`);
+      }
+      greeet("skillsafari");
+
+      function aa(hiSkillSafari) {
+        console.log(hiSkillSafari);
+      }
+      aa("hi Skill Safari");
+      function double(shout) {
+        console.log(shout + shout);
+      }
+      double("bye");
+
+      function length(count) {
+        console.log(count.length);
+      }
+      length("hello");
+      function toCase(para) {
+        let lower = para.toLowerCase();
+        let higher = para.toUpperCase();
+        console.log(`${lower} - ${higher}`);
+      }
+      toCase("maxwell");
+
+      function shortcut(one, two) {
+        console.log(one.slice(0, 1) + two.slice(0, 1));
+      }
+      shortcut("java", "script");
+      function firstChar(character) {
+        console.log(`${character.slice(0, 1)} is the first character`);
+      }
+      firstChar("robo");
+
+      function indexOfIgnoreCase(one, two) {
+        console.log(one.indexOf(two, 0));
+      }
+      indexOfIgnoreCase("skill", "ill");
+
+      function secondIndexOf(one, two) {
+        console.log(one.lastIndexOf(two));
+      }
+      secondIndexOf("white rabbit", "it");
+
+      function firstWord(one) {
+        let array = one.split(" ");
+        console.log(array);
+        let output = array[0];
+        console.log(output);
+      }
+      firstWord("hardik pandiya");
+      function normalize(date) {
+        let array = date.split("-");
+        console.log(array.join("/"));
+      }
+      normalize("15 - 07 - 21");
+      function add(one, two) {
+        console.log(one + two);
+      }
+      add(1, 2);
+
+      function mean(one, two) {
+        let sum = one + two;
+        let avg = sum / 2;
+        console.log(avg);
+      }
+      mean(1, 4);
+
+      function hypoteenuse(one, two) {
+        let three = one * one + two * two;
+        console.log(Math.sqrt(three));
+      }
+
+      hypoteenuse(3, 5);
+      function midrange(one, two, three) {
+        let minimum = Math.min(one, two, three);
+        let maxi = Math.max(one, two, three);
+        let wavg = minimum + maxi;
+        let avg = wavg / 2;
+        console.log(avg);
+      }
+      midrange(3, 9, 1);
+      function ad(num) {
+        let array = num.split("+");
+        console.log(array);
+        let [ele1, ele2] = array;
+        let con1 = +ele1;
+        let con2 = +ele2;
+        let final = con1 + con2;
+        console.log(final);
+      }
+      ad("102+5");
+
+      function nand(one, two) {
+        if (one && two) {
+          console.log(false);
+        } else {
+          console.log(true);
+        }
+      }
+      nand(0, 0);
+      function isEven(num) {
+        if (num % 2) {
+          console.log("false");
+        } else {
+          console.log("true");
+        }
+      }
+      isEven(2);
+
+      function unEqual(one, two, three) {
+        if (one === two || two === three) {
+          console.log(false);
+        } else {
+          console.log(true);
+        }
+      }
+      unEqual(1, 1, 3);
+
+      function threeDigit(one) {
+        if (one >= 100 && one < 1000) {
+          console.log(true);
+        } else {
+          console.log(false);
+        }
+      }
+      threeDigit(500);
+
+      function equals(one, two) {
+        if (one === two) {
+          console.log("equal");
+        } else {
+          console.log("unequal");
+        }
+      }
+      equals(1, 1);
+
+      function repdigit(one) {
+        let converstion = String(one);
+        array = converstion.split("");
+        console.log(array);
+        let [element1, element2] = array;
+        let stringOne = element1;
+        let stringTwo = element2;
+        if (element1 === element2) {
+          console.log("repdigit");
+        } else {
+          console.log("no repdigit");
+        }
+      }
+      repdigit(22);
+      function addWithsurCharge(one, two) {
+        if (one <= 10) {
+          one = one + 1;
+        } else {
+          one = one + 2;
+        }
+
+        if (two <= 10) {
+          two = two + 1;
+        } else {
+          two = two + 2;
+        }
+
+        console.log(one + two);
+      }
+
+      addWithsurCharge(5, 15);
+
+      function sumMultiples(num) {
+        let multiples = [];
+        for (i = 1; i < num; i++) {
+          if (i * 3 < num) {
+            multiples.push(i * 3);
+          }
+          if (i * 5 < num) {
+            multiples.push(i * 5);
+          }
+        }
+        console.log(multiples);
+        multiples.sort(function (a, b) {
+          return a - b;
+        });
+        console.log(multiples);
+        let comparable = 0;
+        for (i = 0; i <= multiples.length; i++) {
+          comparable = multiples[i];
+          if (comparable == multiples[i + 1]) {
+            multiples.splice(i, 1);
+          }
+        }
+        console.log(multiples);
+        let output = multiples.join(",");
+        console.log(output);
+      }
+      sumMultiples(20);
+      function toFahrenheit(num) {
+        console.log(num * 1.8 + 32);
+      }
+      toFahrenheit(2);
+    </script>
+  </body>
+</html>

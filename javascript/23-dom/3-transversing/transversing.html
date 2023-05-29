@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="transverse" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li class="list-items">home</li>
+      <li class="list-items">about</li>
+      <li class="list-items">projects</li>
+      <li class="list-items">awards</li>
+      <li class="list-items">contact</li>
+    </ul>
+    <script>
+      // transverse
+      //1. child to parent
+      // 2. parent to child
+      // 3. siblings
+
+      // child to parent
+      let projects = document.querySelectorAll(".list-items")[2]; // html collection n node list both is array like but not array but i can use index to access that element
+
+      console.log(projects);
+
+      // parentNode
+      console.log(projects.parentNode);
+
+      // parent to child
+      let list = document.querySelector("#list");
+      console.log(list);
+      console.log(list.firstElementChild);
+      console.log(list.lastElementChild);
+
+      console.log(list.children);
+
+      for (const listele of list.children) {
+        console.log(listele);
+        console.log(listele.textContent);
+      }
+
+      // siblings
+      let project = document.querySelectorAll(".list-items")[2];
+      console.log(project);
+      console.log(project.nextElementSibling);
+      console.log(project.previousElementSibling);
+    </script>
+  </body>
+</html>

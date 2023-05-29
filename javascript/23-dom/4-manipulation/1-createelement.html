@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="element" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // create element
+      // syntax
+      // document.createElement("tagname")
+      let h = document.createElement("h2"); // dom will take everything as object so if want to add anything to it  add like adding  key value or property to the object
+
+      console.log(h);
+      h.textContent = "this is headingg";
+
+      // another way to add text is appendchild .appendchild will add this text as last child to parent element we are adding
+      let text = document.createTextNode("this is next child");
+      h.appendChild(text);
+
+      h.id = "demo";
+      h.className = "democlass";
+
+      console.log(h);
+
+      document.body.appendChild(h); // for taking to html page
+    </script>
+  </body>
+</html>

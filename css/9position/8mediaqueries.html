@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="mediaqueries" />
+    <title>mediaqueries</title>
+    <style>
+      /* media queries are reponsive to the webpage
+     max-width=upto
+     minwidth=starts from
+     @media only screen and(max-width:400px)  { 
+
+     }*/
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .nav {
+        /* background: cornflowerblue; */
+        min-height: 20vh;
+        text-align: center;
+
+        list-style: none;
+      }
+      li {
+        background: rgb(33, 8, 175);
+        display: inline-block;
+        font-size: 30px;
+        padding: 20px 130px;
+        margin-top: 10px;
+      }
+
+      @media only screen and (max-width: 400px) {
+        /* upto-400px(normal css+ maxwidth) */
+        body {
+          background-color: black;
+        }
+        li {
+          background: rgb(0, 128, 32);
+          display: block;
+        }
+        .nav-contact {
+          display: none;
+        }
+      }
+      @media only screen and (min-width: 600px) {
+        /* starts from-600px(normal css+ max-width)
+        400-600px(normal css) */
+        body {
+          background: olive;
+        }
+        li {
+          background: red;
+          display: inline-block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="nav">
+      <li class="nav-items">home</li>
+      <li class="nav-items">about</li>
+      <li class="nav-items">projects</li>
+      <li class="nav-contact">contact</li>
+    </ul>
+  </body>
+</html>

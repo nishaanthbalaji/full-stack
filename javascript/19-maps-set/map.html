@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="map" />
+    <title>map</title>
+  </head>
+  <body>
+    <script>
+      // map==> smilar like object
+
+      // property can be of any type
+      //1] object
+      // 2] map
+
+      // creating map constructor
+      // syntax
+      // let varName= new map();
+      let subjects = new Map();
+      console.log(subjects);
+
+      //supporting methods and property
+      // 1. map.set("key" , "value") ==> add new property with key and value passed
+      //2. map.get("key")==> return property "value " based on "key " passed
+      //3.map.has("key")==>  check the existance of the "key " passed
+      // 4. map.clear()==> removes all the properties in the map
+      // 5. map.delete("key")==> remove the property based on the key
+      //6. map.forEach()
+      // 7. keys()
+      // 8.values()
+      // 9. entries()
+      // 10.size
+
+      // adding properties
+      subjects.set("name", "john");
+      subjects.set("age", 25);
+      subjects.set("city", "chennai");
+      console.log(subjects);
+
+      // accesing properties
+      console.log(subjects.get("age"));
+
+      // checking the existance of the property
+      console.log(subjects.has("name"));
+      console.log(subjects.has("state"));
+
+      // delete
+      subjects.delete("age");
+      console.log(subjects);
+
+      console.log(subjects.size);
+
+      // clear
+      subjects.clear();
+      console.log(subjects);
+
+      // key as object
+      let userDetails = new Map();
+      let john = { name: "john" };
+      let jack = { name: "jack" };
+      let marry = { name: "marry" };
+
+      userDetails
+        .set(john, "admin")
+        .set(jack, "sales")
+        .set(marry, "operations");
+      console.log(userDetails);
+
+      // another way of adding properties
+      let fruit = new Map([
+        ["apple", 25],
+        ["mango", 35],
+        ["orange", 40],
+      ]);
+      console.log(fruit);
+
+      // key ()
+      console.log(fruit.keys());
+      for (const fruitkey of fruit.keys()) {
+        console.log(fruitkey);
+      }
+
+      // values()
+      console.log(fruit.values());
+      for (const fruitvalue of fruit.values()) {
+        console.log(fruitvalue);
+      }
+
+      // entries()
+      console.log(fruit.entries());
+
+      for (const [key, value] of fruit.entries()) {
+        console.log(`key is ${key} and the value is ${value}`);
+      }
+      //map.forEach(value , key , map)
+      fruit.forEach((value, key, map) => {
+        console.log(`key==>${key} and value==>${value}`);
+      });
+
+      // object.entries()==> object to map
+
+      let userObj = {
+        name: "john",
+        age: 25,
+        city: "chennai",
+      };
+
+      console.log(userObj);
+
+      let userMap = new Map(Object.entries(userObj));
+      console.log(userMap);
+
+      //Object.fromEntries()=> map to object
+
+      let fruitMap = new Map([
+        ["apple", 25],
+        ["mango", 30],
+        ["orange", 40],
+      ]);
+      console.log(fruitMap);
+      let fruitObj = Object.fromEntries(fruitMap);
+      console.log(fruitObj);
+      //convert the value in fruitobj *2 eg : apple 50(25*2);
+      let newFruitArray = Object.entries(fruitObj);
+      console.log(newFruitArray); // ths is not Map this  is array iniside array . Map means obj inside key value pair in given order.
+      //// obj to map map to obj like that  we are changing to do operations.  In this case doing operation in map is difficult so covert to array into array and do operation then convert to obj .Map is advisable to use in case of final output  not to use inacse of doing operation
+
+      // let finalArray = newFruitArray.map((ele) => {
+      //   return [ele[0], ele[1] * 2];
+      // });
+
+      // let newFruitObj = Object.fromEntries(finalArray);
+      // console.log(newFruitObj);
+
+      // Shortcut for above operation
+      let newFruitObj = Object.fromEntries(
+        Object.entries(fruitObj).map((ele) => {
+          return [ele[0], ele[1] * 2];
+        })
+      );
+      console.log(newFruitObj);
+    </script>
+  </body>
+</html>

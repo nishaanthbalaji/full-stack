@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="assesment" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // alert("welcome to javascript");
+      // console.log("welcome to javascript");
+      // document.write("welcome to javascript");
+      // const userid = "1";
+      // const firstName = "glen";
+      // const lastName = "maxwell";
+      // const password = 123;
+      // const email = "maxwell@gmail.com";
+      // const gender = "male";
+      // const age = "32";
+      // const accountCreated = "yes";
+      // alert(`user id is ${userid}`);
+      // alert(`first name is ${firstName}`);
+      // alert(`last name is ${lastName}`);
+      // alert(`password is ${password}`);
+      // alert(`email is ${email}`);
+      // alert(`gender is ${gender}`);
+      // alert(` age is ${age}`);
+
+      // console.log(`user id is ${userid}`);
+      // console.log(`first name is ${firstName}`);
+      // console.log(`last name is ${lastName}`);
+      // console.log(`password is ${password}`);
+      // console.log(`email is ${email}`);
+      // console.log(`gender is ${gender}`);
+      // console.log(` age is ${age}`);
+
+      // document.write(`<p> user id ${userid}</p>`);
+      // document.write(`<p>first name is ${firstName}</p>`);
+      // document.write(`<p>last name is ${lastName}</p>`);
+      // document.write(`<p>password is ${password}</p>`);
+      // document.write(`<p>email is ${email}</p>`);
+      // document.write(`<p>gender is ${gender}</p>`);
+      // document.write(`<p> age is ${age}</p>`);
+
+      document.write("<hr>");
+
+      // let fruit = "apple";
+      // let vegetable = "carrot";
+      // document.write(`<p>${fruit}</p>`);
+      // document.write(`<p>${vegetable}</p>`);
+
+      // function user(
+      //   userid,
+      //   firstName,
+      //   lastName,
+      //   password,
+      //   email,
+      //   gender,
+      //   age,
+      //   accountCreated
+      // ) {
+      //   console.log(`user id is ${userid}`);
+      //   console.log(`firstnameis ${firstName}`);
+      //   console.log(` last name is ${lastName}`);
+      //   console.log(` password is ${password}`);
+      //   console.log(` email is ${email}`);
+      //   console.log(` gender is ${gender}`);
+      //   console.log(` age is ${age}`);
+      //   console.log(` account created is ${accountCreated}`);
+      // }
+      // user(1, "david", "warner", 123, "david@gamil.com ", "male", "true");
+
+      // let userr = function (
+      //   userid,
+      //   firstName,
+      //   lastName,
+      //   password,
+      //   email,
+      //   gender,
+      //   age,
+      //   accountCreated
+      // ) {
+      //   console.log(`user id is ${userid}`);
+      //   console.log(`firstnameis ${firstName}`);
+      //   console.log(` last name is ${lastName}`);
+      //   console.log(` password is ${password}`);
+      //   console.log(` email is ${email}`);
+      //   console.log(` gender is ${gender}`);
+      //   console.log(` age is ${age}`);
+      //   console.log(` account created is ${accountCreated}`);
+      // };
+      // userr(1, "david", "warner", 123, "david@gamil.com ", "male", "true");
+
+      // let userrr = (
+      //   userid,
+      //   firstName,
+      //   lastName,
+      //   password,
+      //   email,
+      //   gender,
+      //   age,
+      //   accountCreated
+      // ) => {
+      //   console.log(`user id is ${userid}`);
+      //   console.log(`firstnameis ${firstName}`);
+      //   console.log(` last name is ${lastName}`);
+      //   console.log(` password is ${password}`);
+      //   console.log(` email is ${email}`);
+      //   console.log(` gender is ${gender}`);
+      //   console.log(` age is ${age}`);
+      //   console.log(` account created is ${accountCreated}`);
+      // };
+      // userrr(1, "david", "warner", 123, "david@gamil.com ", "male", "true");
+      // let object = {
+      //   userid: 1,
+      //   firstName: "jos",
+      //   lastName: "butler",
+      //   password: "123",
+      //   country: "india",
+      //   continent: "asia",
+      // };
+
+      // console.log(object.userid);
+      // console.log(object.firstName);
+      // console.log(object.lastName);
+      // console.log(object.password);
+      // console.log(object.country);
+      // console.log(object.continent);
+
+      // delete object.country;
+      // delete object.continent;
+      // console.log(object);
+
+      // for (const key in object) {
+      //   console.log(object[key]);
+      // }
+      let displayAge = function (age) {
+        alert(age);
+      };
+      let displayAccountCreated = function (acc) {
+        alert(acc);
+      };
+      let userrrr = (
+        userid,
+        firstName,
+        lastName,
+        password,
+        email,
+        gender,
+        age,
+        accountCreated,
+        fun1,
+        fun2
+      ) => {
+        console.log(`user id is ${userid}`);
+        console.log(`firstnameis ${firstName}`);
+        console.log(` last name is ${lastName}`);
+        console.log(` password is ${password}`);
+        console.log(` email is ${email}`);
+        console.log(` gender is ${gender}`);
+        alert(` age is ${age}`);
+        alert(` account created is ${accountCreated}`);
+        displayAge(this.age);
+        displayAccountCreated(this.accountCreated);
+      };
+      userrrr(
+        1,
+        "david",
+        "warner",
+        123,
+        "david@gamil.com ",
+        "male",
+        "12",
+        "yes",
+        displayAge,
+        displayAccountCreated
+      );
+      let dispAge = function (age) {
+        console.log(age);
+      };
+
+      function user(u, f, l, p, e, a, g) {
+        this.userid = u;
+        this.firstName = f;
+        this.lastName = l;
+        this.password = p;
+        this.email = e;
+        this.age = a;
+        this.gender = g;
+      }
+
+      function dice() {
+        let r = Math.random() * 6;
+        console.log(r);
+        let rr = Math.ceil(r);
+        console.log(rr);
+      }
+      dice();
+      console.log(Math.ceil(0.36));
+    </script>
+    <script defer src="./external.js"></script>
+  </body>
+</html>

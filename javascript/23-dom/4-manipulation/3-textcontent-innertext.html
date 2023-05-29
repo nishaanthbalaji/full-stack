@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="content" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="list">
+      <li class="list-items">home</li>
+      <li class="list-items">about</li>
+      <li class="list-items" style="display: none">projects</li>
+      <li class="list-items">awards</li>
+      <li class="list-items">contact</li>
+    </ul>
+    <p id="para"></p>
+    <script>
+      // text content vs inner text
+      let para = document.querySelector("#para");
+      para.textContent = "his is paragraph";
+      //para.innerText = "thsi is ";
+      // if i add this this paragraph will go it will take only one and last command to add the text as both command
+      // is used to add text to element
+      let listed = document.querySelector("#list");
+      console.log(listed.textContent);
+      console.log(listed.innerText);
+
+      //text content wont consider css so projects is printed
+      // inner text will conssider css so projects is not printed
+    </script>
+  </body>
+</html>

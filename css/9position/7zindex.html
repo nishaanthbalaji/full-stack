@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="z-index" />
+
+    <title>z-index</title>
+    <style>
+      .container {
+        min-height: 400px;
+        width: 400px;
+        border: 2px solid green;
+        position: relative;
+      }
+      img {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+      }
+
+      .one {
+        top: 30px;
+        left: 30px;
+        z-index: -2;
+      }
+      .three {
+        top: 60px;
+        left: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="./OIP.jpg" alt="img-one" class="one" />
+      <img src="./download.jpg" alt="img-two" class="two" />
+      <img src="./download (1).jpg" alt="img-three" class="three" />
+    </div>
+  </body>
+</html>

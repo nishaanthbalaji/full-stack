@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descrption" content="constructor" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  constructor
+      //similar like a function
+      //name of the constructor function must be in pascal notation
+      //ex: UserDetails, ShowMessage
+      //constructor function can be initialized using "new " keyword
+
+      //   function showMessage() {
+      //     console.log("heloo");
+      //   }
+      //   showMessage();
+
+      //   function userDetails() {
+      //     console.log("john");
+      //   }
+      //   new userDetails();
+
+      function userDetail(name, age, isAdmin) {
+        return {
+          name: name,
+          age: age,
+          isAdmin: isAdmin,
+        };
+      }
+      console.log(userDetail("john", 25, true));
+
+      function UserDetails(name, age, isAdmin) {
+        //  implicitly
+        //let this ={};
+        this.name = name;
+        this.age = age;
+        this.isAdmin = isAdmin;
+
+        // implicitly
+        // THIS IS USED FOR RETURN . IF THIS IS USED WE CAN TAKE OUT KEY VALUE OUT OF THE FUNCTION
+      }
+
+      let john = new UserDetails("john", 25, false);
+      console.log(john);
+      console.log(new UserDetails("jack", 30, false));
+
+      function UserName(name) {
+        this.name = name;
+        this.displayName = function () {
+          console.log(`username is :${this.name}`);
+        };
+      }
+      new UserName("john").displayName();
+      console.log(new UserDetails("jack").name);
+    </script>
+  </body>
+</html>

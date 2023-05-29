@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="before-after" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>before() and after()</h2>
+    <div id="demo">
+      <p id="para">this is paragraph</p>
+    </div>
+    <script>
+      // before() => insert one or more nodes before the selected element
+      // after ()==> insert one or more nodes after the selected element
+
+      // syntax
+      // ele.before(...nodes)  //(node) if single element i add no need to put(...)spread opertor
+      // ele.after(...nodes)   //(...node)  if multiple elements are added need to put spread operator
+      let para = document.querySelector("#para");
+      // i have to create element and add
+      let newEl = document.createElement("h2");
+      newEl.textContent = "hello";
+      para.before(newEl);
+
+      let list = ["home", "about", "projects", "contact"];
+
+      function addlist(li) {
+        // console.log(li);
+        let newelement = li.map((ele) => {
+          let newEle = document.createElement("p");
+          newEle.textContent = ele;
+          return newEle;
+        });
+        // console.log(newelement);
+        return newelement;
+      }
+
+      console.log(addlist(list));
+      para.after(...addlist(list));
+    </script>
+  </body>
+</html>

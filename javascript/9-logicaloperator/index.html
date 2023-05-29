@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descripton" content="logical-operator" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // logical operator
+      // 1]or==> ||
+      // 2} and==>&&
+      // 3}not==> !
+      // 4} nullish coaleshing==>??
+      //  results can be both Boolean n any type
+      // binary operator accepts two operands with operator
+      // (12>5) ||(3<5) ==>true || true==> true
+      console.log(12 > 5 || 3 < 5);
+      //   true=true==>true
+      //   false=true==>true
+      //   true=false==>true
+      //   false=false==>false
+      // hsc=60
+      // ug=70
+      // pg=75
+      // if any one of the condition is true can attend the interview
+      let hsc = +prompt("Enter the ug mark");
+      let ug = +prompt("enter the ug mark?");
+      let pg = +prompt("enter the pg mark");
+      //   if (hsc >= 60) {
+      //     console.log("eligible to interview");
+      //   } else if (ug >= 70) {
+      //     console.log("eligible to interview");
+      //   } else if (pg >= 75) {
+      //     console.log("eligible to interview");
+
+      //   } else {
+      //     console.log(" not eligible interview");
+      //   }
+      if (hsc >= 60 || ug >= 70 || pg >= 75) console.log("eligible");
+      else console.log("not eligible");
+      console.log(20 > 5 || 12 < 25 || 23 > 5 || 20 == 9);
+      console.log(20 < 5 || 12 > 25 || 23 < 5 || 20 == 9);
+      console.log(25 > 5 || 10 < 5 || "123");
+      console.log(12 < 2 || 1 > 2 || 60 > 100 || 1);
+      //   short circuit
+      console.log(12 > 5 || 10 < 5);
+      console.log(12 < 5 || 10 > 5);
+      console.log(" " || "hello");
+      let user = "john";
+      console.log(user || "guest user");
+      // AND ==>&&
+      // BINARY OPERATOR
+      // TRUE=TRUE==>TRUE
+      // false=TRUE==>false
+      // TRUE=false==>false
+      // false=false==>false
+      console.log(20 > 5 && 12 > 5 && "hello" && 123);
+      console.log(89 && 20 < 5 && 12 > 5 && "hello");
+      //   not;
+      //   unary operator
+      //   true=false
+      //   false=true
+      if (!true) {
+        console.log("i m from if block");
+      } else {
+        console.log(" im from else block ");
+      }
+      // null coaleshing ??
+      // used to check the variablr defined or not
+      // a??b
+      let a = null;
+      console.log(a ?? "hello");
+      let b;
+      console.log(b ?? "hai");
+      let height = 0;
+      console.log(height ?? "hello");
+      console.log(false ?? true);
+    </script>
+  </body>
+</html>

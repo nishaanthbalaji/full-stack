@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="adjacent" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>insert adjacent html</h2>
+    <ul id="list"></ul>
+    <script>
+      // insertAdjacentHTML("ref" , element)
+      // 1.before begin => insert an  element before the specified elemnt
+      // 2.after begin ==>insert an element before its first child
+      // 3. before end ==> insert an element after  its last child
+      // 4.after end=> insert an element after the element
+
+      // syntax
+      // ele.insertAdjacentHTML("ref" , element)
+      let list = document.querySelector("#list");
+      list.insertAdjacentHTML("beforebegin", "<h2>list</h2>");
+      list.insertAdjacentHTML("afterbegin", "<li>home</li>");
+      list.insertAdjacentHTML("afterbegin", "<li>about</li>");
+      list.insertAdjacentHTML("afterbegin", "<li>contact</li>");
+      list.insertAdjacentHTML("beforeend", "<li>projects</li>");
+      list.insertAdjacentHTML("afterend", "<hr/>");
+    </script>
+  </body>
+</html>

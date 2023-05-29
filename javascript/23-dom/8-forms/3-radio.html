@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="radio" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <p>select anyone</p>
+      <label for="english">
+        <input
+          type="radio"
+          name="subject"
+          id="english"
+          value="english"
+        />English</label
+      >;
+      <label for="maths">
+        <input type="radio" name="subject" id="maths" value="maths" />Maths
+      </label>
+      <label for="physics">
+        <input
+          type="radio"
+          name="subject"
+          id="physics"
+          value="physics"
+        />physics
+      </label>
+      <label for="chemistry">
+        <input
+          type="radio"
+          name="subject"
+          id="chemistry"
+          value="chemistry"
+        />chemistry
+      </label>
+      <p>
+        <button id="btn">submit</button>
+      </p>
+    </form>
+    <hr />
+    <p id="result"></p>
+    <script>
+      let radio = document.querySelectorAll("[type='radio']");
+      console.log(radio);
+      let para = document.querySelector("#result");
+      let btn = document.querySelector("#btn");
+      let selectedOption; // selectOption is global variable so value for this can added  n accessed any where
+      // if selected option is local variable then only its scope is limited to that fuunction r object
+
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        for (const ele of radio) {
+          if (ele.checked) {
+            // if the input is ticked are not can be seen through accessing .checked
+            selectedOption = ele.value;
+            // console.log(selectedOption);
+          }
+        }
+        para.textContent = selectedOption
+          ? `you selected :${selectedOption}`
+          : `you need not selected any element`;
+      });
+    </script>
+  </body>
+</html>

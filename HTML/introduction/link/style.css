@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Babylonica&display=swap");
+
+li {
+  display: inline-block;
+  padding: 20px 70px;
+  font-size: 40px;
+  background: olive;
+}
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+img {
+  width: 250px;
+  height: 250px;
+}
+.footer {
+  color: brown;
+}
+body {
+  font-family: "Babylonica", cursive;
+  font-size: 50px;
+}
+.navba;

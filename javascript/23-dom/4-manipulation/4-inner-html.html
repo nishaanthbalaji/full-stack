@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bg {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="list"></ul>
+    <div id="demo"></div>
+    <button id="add-list">add list</button>
+    <button id="add-child">add child</button>
+
+    <button id="add-style">add style</button>
+
+    <script>
+      // inner html
+
+      let list = document.querySelector("#list");
+      console.log(list);
+      let demo = document.querySelector("#demo");
+      console.log(demo);
+
+      let addlist = document.querySelector("#add-list");
+      console.log(addlist);
+
+      let addChild = document.querySelector("#add-child");
+      console.log(addChild);
+
+      addlist.addEventListener("click", () => {
+        let listitems = `<li class="list-items">home</li>
+                        <li class="list-items">about</li>
+                        <li class="list-items">procjects</li>
+                        <li class="list-items">contact</li>`;
+
+        list.innerHTML = listitems;
+      });
+
+      addChild.addEventListener("click", () => {
+        let childele = ` <p id ="para"> this is a paragaraph</p>
+                        <a href="#"> click</a>
+                        </hr>
+                        <h3>heading three</h3>`;
+        demo.innerHTML = childele;
+      });
+
+      let addStyle = document.querySelector("#add-style");
+      console.log(addStyle);
+      addStyle.addEventListener("click", () => {
+        list.className = "bg";
+      });
+
+      //difference between inner html and create element
+      // inner html
+      // if i add something to tree (eg : add 100 li) it will take some time to change it wont work effictively
+
+      // create element
+      // create element will add one by one so it wont create problem & will work effectively
+    </script>
+  </body>
+</html>

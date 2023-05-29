@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="weekmap" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // difference between (strong)map n set and (weak) map n set is
+      // in case of strong if i delete a data stored in map n set it will be permanentaly deleted from memory i cant recover that
+      // in case of weak if i delete a data stored in week map n set it will be moved to a garbage located in memory  i can recover from that garbage whenever i want that
+
+      // week not really important just to know the concept
+      // weakMao
+      // same as map
+      let weekmap = new WeakMap();
+      console.log(weekmap);
+
+      let john = { name: "john" };
+      let jack = { name: "jack" };
+
+      weekmap.set(john, "johnDeails");
+      weekmap.set(jack, "jackDetails");
+      console.log(weekmap);
+
+      // supporetd methods
+      // set()
+      // get()
+      // has()
+      // delete()
+
+      // not suppoertd methods
+      // clear()
+      // keys()
+      // values()
+      // forEach()
+      // size
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
+section {
+  background: lightgray;
+}
+body {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+}
+a {
+  color: gray;
+  text-decoration: none;
+}
+img {
+  width: 300px;
+  height: 300px;
+}
+header {
+  background: red;
+}
+table {
+  margin: 30px;
+}
+
+video {
+  width: 300px;
+  height: 300px;
+}
+.vid {
+  height: 1000px;
+}
+p {
+  background: lightslategray;
+}
+.fa-brands {
+  font-size: large;
+}
+.GOLD {
+  background: lightslategray;
+}
+header {
+  background: gold;
+  word-spacing: 150px;
+  font-weight: 200px;
+}
+.LOGO {
+  width: 100px;
+  height: 100px;
+}
+i {
+  font-size: 50px;
+}
+footer {
+  background: gold;
+}
+
+.playbold {
+}

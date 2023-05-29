@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descripton" content="functions" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // functions ==>buliding block for a program
+      // function declaration
+      // function calling
+      //   Syntax;
+      // // parameter n arguments is optional
+      // function declaration
+      // function functionname(parameter1,parameter2.....,parameter n){
+
+      // }
+      //  function calling
+      //  functionname(argument1,......argument n)
+      // function declaration
+      let num = 20; // outer variable => scope/ visible throughout the application;
+      function add() {
+        // local variable ==> scope/ viible only inside the function body
+        let numOne = 12;
+        let numTwo = 20;
+        let sum = numOne + numTwo;
+        console.log(sum);
+        num = num + 10;
+        console.log(num);
+      }
+      add();
+      console.log(num);
+      // local variable limits inside the block . i.e outside the block cannot be accesed
+      function display() {
+        let message = "welcome";
+        console.log(message);
+        message = "hai";
+        console.log(message);
+      }
+      display();
+      let message = "hello";
+      console.log(message);
+
+      // outer variable can be modified and accesed iniside and outside the block
+      let n = 10;
+      function sum() {
+        let nnumOne = 10;
+        let nnumTw0 = 20;
+        let result = nnumOne + nnumTw0;
+        console.log(result);
+        // n = n + 20;
+        // console.log(n);
+      }
+      // console.log(n);
+      sum();
+      // console.log(n);
+      // parameters;
+      function displaymessage(name) {
+        //let name="jack"
+        console.log(`welcome:${name}`);
+      }
+      displaymessage("jack");
+      displaymessage("robert");
+
+      // let fName = "josh";
+      // function display(lName) {
+      //   // console.log(`${fName}, ${lName}`);
+      //   console.log(IName);
+      // }
+      // display("jim");
+      //defaultvalues
+      function dis(message = "welcome") {
+        console.log(message);
+      }
+      dis();
+      // return in function;
+      // 1) one function must have only one return
+      // 2] result must be used to send the final result of the output
+      // 3] result can be of primitive values or any expression
+      function sum(num1, num2) {
+        let result = num1 + num2;
+        return (result = num1 + num2);
+        // return console.log(result);
+        // return result;
+      }
+
+      // let output = sum(15, 20);
+      // console.log(output);
+      console.log(sum(10, 15));
+      // console.log(result);
+      function demo(nu) {
+        // return nu * 2;
+        return nu * 3;
+        return nu * 5;
+      }
+      console.log(demo(3));
+    </script>
+  </body>
+</html>

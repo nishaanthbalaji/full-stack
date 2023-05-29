@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="attribute" />
+    <title>attribute</title>
+    <style>
+      h1[class="color-red"] {
+        text-decoration: underline;
+        color: darkviolet;
+        font-size: 36px;
+      }
+      p[class^="c"] {
+        color: red;
+      }
+      p[class*="e"] {
+        color: red;
+      }
+      p[class$="n"] {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>heading</h1>
+    <p class="color-red">this is paragraph</p>
+    <a href="#">click</a>
+    <p class="color-green">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.<a href="#"
+        >link text</a
+      >
+      Error eius, incidunt
+    </p>
+
+    <h1 class="color-red">heading</h1>
+    <p>this is paragraph</p>
+    <a href="#">click</a>
+    <p class="color-blue">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.<a href="#"
+        >link text</a
+      >
+      Facere iste non facilis anim
+    </p>
+    <hr />
+    <p class="color-brown">this is paragraph</p>
+    <a href="#">click</a>
+
+    <p class="color-coral">
+      Lorem ipsum dolor sit amet.<a href="#">link text</a> Lorem, ipsum dolor.
+    </p>
+    <h1>heading</h1>
+    <p id="color-crimson">this paragraph</p>
+    <a href="">click</a>
+    <p id="color-yellow">
+      Lorem ipsum dolor sit amet.<a href="#">link text</a>Lorem, ipsum dolor.
+    </p>
+  </body>
+</html>

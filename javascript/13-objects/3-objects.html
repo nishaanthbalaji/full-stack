@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descripton" content="object" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   function fruits(name) {
+      //     console.log(name);
+      //   }
+      //   // fruits();
+      //   // let fruitss = function (name) {
+      //   //   console.log(name);
+      //   // };
+      //   // fruitss("watermelon");
+
+      //   let details = {
+      //     name: "john",
+      //     age: 20,
+      //     nish() {
+      //       console.log("Nishanth is a dumb");
+      //     },
+      //   };
+      //   details.newProp = fruits;
+      //   // details.fruitsFunction = fruitss;
+      //   // details.fruitsFunction("apple");
+      //   console.log(details);
+      //   details.nish();
+      //   //details.newProp("Dhanush");
+      //   fruits("bannana");
+
+      let display = {
+        name: "jack",
+        age: 20,
+        dhanoosh() {
+          console.log(`inside ${this.name}`);
+        },
+        city: "palladam",
+      };
+      display.dhanoosh();
+      console.log("outside");
+      console.log(this.name);
+
+      //   objects - methods ( in objects another name for function is methods)
+      function fruits() {
+        console.log("apple");
+      }
+      // fruits();
+      let fruitss = function (name) {
+        console.log(name);
+      };
+      fruitss("bananna");
+
+      let details = {
+        name: "john",
+        age: 40,
+      };
+
+      details.newprop = fruitss;
+      fruitss("watermelon");
+      details.newprop("cucumber"); // (iniside the details object function wont display   through details object  we can access the function we can also access through  fruits)
+
+      console.log(details);
+
+      let userdetails = {
+        name: "john",
+        display() {
+          console.log(`welcome, ${this.name}`); //  (this can be used within the object instead of object name)
+          console.log(`welcome ,${userdetails.name}`);
+        },
+      };
+      userdetails.display();
+      console.log(userdetails);
+      let objOne = { name: "Jack" };
+      let objTwo = { name: "John" };
+
+      let displayMessage = function () {
+        console.log();
+        console.log(`welcome, ${this.name}`); //  (this we wrote for future use not current  before function is assinged to objone, two as value after assigning the function this will work)
+      };
+
+      objOne.newProp = displayMessage;
+      objTwo.newProp = displayMessage;
+      displayMessage();
+      objOne.newProp();
+      objTwo.newProp();
+      console.log(objOne);
+
+      console.log(objTwo);
+    </script>
+  </body>
+</html>

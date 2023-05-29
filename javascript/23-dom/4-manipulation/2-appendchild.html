@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="append-child" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="list"></ul>
+    <button id="btn">click</button>
+
+    <script>
+      // appendchild()
+      let listItems = ["home", "about", "project", "contact"];
+      let list = document.querySelector("#list");
+
+      function addChildItems(listText) {
+        let li = document.createElement("li");
+        li.className = "list-items";
+        li.textContent = listText;
+        list.appendChild(li);
+      }
+
+      let butt = document.querySelector("#btn");
+      butt = addEventListener("click", () => {
+        listItems.forEach((list) => {
+          addChildItems(list);
+        });
+      });
+      //if i refresh the page everything will go as i called the function through add eventlistner it is an event
+      //if i click the button it is an event so that command given for event will occur it will go if i refresh
+      // it wont be permanntely there in html page
+
+      // add event listner is a type of event all event will occur if a particular thing (eg:click) happen if i refresh it will go
+    </script>
+  </body>
+</html>

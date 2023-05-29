@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="destructuring" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //DESTRUCTURING ASSIGNMENT=> UNpacking the properties or element from object or array
+      // objects and array
+      let john = { name: "john", age: 30 };
+      let names = ["john", "jack", "marry"];
+
+      // arrays
+      // syntax
+      // let [var-1 , var-2...., var-N]= ["ele-1" , "ele-2" ,....,"ele-N" ]
+      // left -side==> variable
+      // right-side==> array
+
+      let fruits = ["apple", "orange", "mango"];
+      console.log(fruits[0]);
+      console.log(fruits[1]);
+      console.log(fruits[2]);
+
+      let [fruitOne, fruitTwo, fruitThree] = fruits; // ["apple" , "orange" , "mango"] instead of putting all of thes elements i put fruits
+
+      console.log(fruitOne);
+      console.log(fruitTwo);
+      console.log(fruitThree);
+
+      // destructure array like values
+      // let [firstName, lastName] = "john, jack".split(", ");
+      // console.log(firstName);
+      // console.log(lastName);
+
+      // in case of set we cannot take out the individual value seperately.
+      // we cannot use get method also .
+      //we can take out value from set only through itteration all value one by one by using for each.
+      //specfic value cant pick to overcome this we use this method
+
+      let [userOne, userTwo] = new Set(["john", "jack"]);
+      console.log(userOne);
+      console.log(userTwo);
+
+      // skip the assignment using ","
+      let userNames = ["adam", "zampa", "maxwell", "stionis"];
+      let [, , glen, marcus] = userNames;
+      console.log(glen);
+      console.log(marcus);
+
+      // swap two values
+      let [numberOne, numberTwo] = [1, 2];
+      console.log("BEFORE SWAP");
+      console.log(numberOne);
+      console.log(numberTwo);
+
+      [numberOne, numberTwo] = [numberTwo, numberOne];
+
+      console.log("after swap");
+      console.log(numberOne);
+      console.log(numberTwo);
+      // rest variable (rest should be given at last)
+      let [subjectOne, subjectTwo, ...restsubjects] = [
+        "english",
+        "maths",
+        "physics",
+        "chemistry",
+        "computer",
+      ];
+      console.log(subjectOne);
+      console.log(subjectTwo);
+      console.log(restsubjects);
+      let [, subjectFour] = restsubjects;
+      console.log(subjectFour);
+
+      let matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+      let [
+        [cellone, celltwo, cellthree],
+        [cellfour, cellfive, cellsix],
+        [cellseven, celleight, cellnine],
+      ] = matrix;
+
+      console.log(cellone);
+      console.log(celltwo);
+      console.log(cellthree);
+      console.log(cellfour);
+      console.log(cellfive);
+      console.log(cellsix);
+      console.log(cellseven);
+      console.log(celleight);
+      console.log(cellnine);
+
+      // // smart functions
+      // console.log("functions");
+      // function sum(num1, num2, num3) {
+      //   console.log(num1);
+      //   console.log(num2);
+      //   console.log(num3);
+      // }
+      // sum(1, 2, 3);
+      function sum([num1, num2, ...num]) {
+        console.log(num1);
+        console.log(num2);
+        console.log(num);
+        let [num3, num4, num5] = num;
+        console.log(num3);
+        console.log(num4);
+        console.log(num5);
+      }
+      sum([1, 2, 3, 4, 5]);
+
+      // object destructuring
+      // syntax
+      //let {prop-1 , prop-2 , prop-3,.....prop-n}={prop-1:value , prop-2:value , prop-3:value , prop-n:value};
+      // let {name , age , city}={name:"john", age:25, city:"chennai"};
+      // console.log(name);
+      // console.log(age);
+      // console.log(city);
+
+      // change the order   (object prop orders can be changed and given . array variable should be given in same order as value)
+      //  let { city, name, age } = { name: "john", age: 25, city: "chennai" };
+      console.log(name);
+      //console.log(age);
+      // console.log(city);
+
+      // alias name for properties
+      // let {prop-1:aliasname-1 , prop-2:aliasname-2 ,prop-3:aliasname-3......prop-n:aliasname-n }
+
+      // let {
+      //   name: n,
+      //   age: a,
+      //   city: c,
+      // } = { name: "john", age: 25, city: "chennai" };
+      // console.log(n);
+      // console.log(a);
+      // console.log(c);
+
+      // rest variable
+
+      let { name: n, ...restvariable } = {
+        name: "john",
+        age: 25,
+        city: "chennai",
+      };
+      console.log(n);
+
+      console.log(restvariable);
+      let { city: c, age: a } = restvariable;
+      console.log(a);
+      //console.log(city);
+
+      // nested properties
+      let userDetails = {
+        name: {
+          firstName: "john",
+          lastName: "wick",
+        },
+        age: 25,
+        hobbies: ["cricket", "football"],
+      };
+
+      let {
+        name: { firstName, lastName },
+        age,
+        hobbies: [hobby1, hobby2],
+      } = userDetails;
+      console.log(name);
+      console.log(firstName);
+      console.log(lastName);
+      console.log(age);
+      console.log(hobby1);
+      console.log(hobby2);
+      // console.log(hobbies);
+
+      function userDetail({ name: n, ...restvariable }) {
+        console.log(name);
+        console.log(n);
+        console.log(restvariable);
+        let { age: a, city: c } = restvariable;
+        console.log(a);
+        console.log(age);
+      }
+
+      userDetail({ name: "john", age: 25, city: "cbe" });
+    </script>
+  </body>
+</html>

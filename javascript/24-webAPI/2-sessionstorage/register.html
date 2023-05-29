@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="register" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#" id="registerform">
+      <p>
+        <input
+          type="text"
+          name="username"
+          id="username"
+          placeholder="enter the username"
+        />
+      </p>
+      <p>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="enter the email"
+        />
+      </p>
+      <p>already registerd<a href="./login.html">click here to sign in</a></p>
+      <input type="submit" value="register" id="register" />
+      <input type="reset" value="clear" id="clear" />
+    </form>
+    <script>
+      let formfields = document.querySelector("#registerform");
+      let username = formfields.elements[0];
+      let email = formfields.elements[1];
+      let password = formfields.elements[2];
+
+      let registerBtn = document.querySelector("#register");
+      registerBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let userobj = {
+          id: Math.floor(Math.random() * 1000),
+          username: username.value,
+          email: email.value,
+          password: password.value,
+        };
+        console.log(userobj);
+        localStorage.setItem(userobj.id, JSON.stringify(userobj)); // i convert the object into string because only
+        // string can be given as both key value i  have value as object so convert to string
+        alert("user registered successfully");
+        window.location.href = "./login.html";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="fetchapi" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>fetch api key</h2>
+    <form action="#">
+      <p>
+        <input type="text" name="city" id="city" placeholder="enter th city" />
+      </p>
+      <p>
+        <input type="submit" value="search" id="search" />
+        <input type="reset" value="clear" />
+      </p>
+    </form>
+    <script>
+      let btn = document.querySelector("#search");
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let city = document.querySelector("#city").value;
+        console.log(city);
+        fetchWeather("");
+      });
+    </script>
+  </body>
+</html>

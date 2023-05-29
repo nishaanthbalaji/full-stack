@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="fetch api" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Fetch api</h2>
+    <input
+      type="text"
+      name="search"
+      id="search"
+      placeholder="search products.."
+    />
+    <input type="button" value="search" id="btn" />
+    <hr />
+    <div id="products"></div>
+    <script>
+      // fetch API
+      // fetch API in javascript is single threaded , synchronous  programming
+      // (synchronous means work one by one  eg: if 10 request i give  it will give response one by one
+      // not all at a time . if one response failed next response wont work. to overcome this javascript introduced some methods
+      // i.e  async
+      //1] callBacks
+      //2] promises
+      //3]Async/ await
+
+      //syntax
+      //fetch("url");
+      let newProducts = [];
+      let productsDiv = document.querySelector("#products");
+      // async is to be used before function  if i fetch data from some place n pass that data's url to the function
+      //Await is to be used before calling each function in the main function in which async is added
+      //json() n fetch () are inbuilt function already written in browser we are calling inside the main function
+      // so use await before . i can also write  a function n call inside the main function but have to add
+      // await before the function while calling
+      async function fetchData(url) {
+        try {
+          // if i write some code inside the try catch even though code is wrong it will run the code and in below catch we can see what is error
+          let res = await fetch(url); // fetch is a method it will take  details from another website related to products and paste  inside the function  so that we can use the same product details here. add await before  each fetch methods
+
+          // let res = await fetch(url+"/"+1);
+
+          console.log(res);
+          let products = await res.json(); // fetch data will bring all details from another website in unodered form. if i do json() it will form like wt order it is there in prev page it will display in same form
+          // previously used JSON() is different from this
+
+          console.log(products);
+          newProducts = [...products]; // i will be using the new products variable out of the scope below although it is global
+          //variable. i can add access value any where but the value assigned to global variable i get from other
+          // website through fetch i add inside the function so to use that array value outside  the scope
+          //i should use spread operator although it is global variable as i get through fetch
+          console.log(newProducts);
+
+          let productArr = products.map((product) => {
+            return `<div id=product-${product.id}>
+              <p><strong>TITTLE:<strong>${product.title}</p>
+                <p><strong>DESCRIPTION:</strong>${product.description}</p>
+                <p><strong>CATEGORY:</strong>${product.category}</p>
+                <img src=${product.image} alt=product-${product.id} height="100px" width="100px">
+                <p><strong>Price:</strong>${product.price}</p>
+                <p><strong>Rating:</strong>${product.rating.rate}</p>
+                <p><strong>COUNTING:</strong>${product.rating.count}</p>
+                </div>
+                <hr/>`;
+          });
+          console.log(productArr.join(" "));
+          productsDiv.innerHTML = productArr.join(" "); // i am converting from array to string because i m going to
+          // add these things as innerhtml to a element only string can be added as innerhtml it is in array so i convet
+          // to string then add as innerhtml to element . only string n array can be added to innerhtml so without
+          //join also i can add
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      fetchData("https://fakestoreapi.com/products");
+      let btn = document.querySelector("#btn");
+      let searchStr = document.querySelector("#search");
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        let filterProducts = newProducts.filter((product) => {
+          return product.title.includes(searchStr.value);
+        });
+        console.log(filterProducts);
+        let productArr = filterProducts.map((product) => {
+          return `<div id=product-${product.id}>
+              <p><strong>TITTLE:<strong>${product.title}</p>
+              <p><strong>DESCRIPTION:</strong>${product.description}</p>
+                <p><strong>CATEGORY:</strong>${product.category}</p>
+                <img src=${product.image} alt=product-${product.id} height="100px" width="100px">
+                <p><strong>Price:</strong>${product.price}</p>
+                <p><strong>Rating:</strong>${product.rating.rate}</p>
+                <p><strong>COUNTING:</strong>${product.rating.count}</p>
+                </div>
+                <hr/>`;
+        });
+        productsDiv.innerHTML = productArr;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="todolist" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+        font-family: "Roboto", sans-serif;
+      }
+      #back {
+        background-color: lightgrey;
+      }
+      #mainpage {
+        min-height: 80vh;
+        width: 30%;
+        background-color: white;
+        border-radius: 10px;
+        margin: 0px auto;
+        opacity: 0.8;
+        font-weight: bolder;
+        padding: 10px;
+      }
+      .first {
+        text-align: center;
+        font-size: 30px;
+        padding-top: 20px;
+      }
+      label {
+        opacity: 0.3;
+      }
+      .boxone {
+        width: 75%;
+        height: 20px;
+      }
+      button {
+        border-style: none;
+        color: grey;
+      }
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="back">
+      <div id="mainpage">
+        <p class="first">TO DO LIST</p>
+        <p>Add items</p>
+        <hr />
+
+        <input class="boxone" type="text" name="todo" id="to" />
+
+        <button id="buttonone">ADD</button>
+
+        <div id="secondpage">
+          <p>TODO</p>
+          <hr />
+
+          <ul id="todolist">
+            <li>
+              <input type="checkbox" name="Paybills" id="Paybills" />
+
+              Paybills
+
+              <button>EDIT</button>
+
+              <button>DELETE</button>
+            </li>
+
+            <li>
+              <input type="checkbox" name="Goshipping" id="Goshipping" />
+
+              Goshipping
+
+              <button>EDIT</button>
+
+              <button>DELETE</button>
+            </li>
+          </ul>
+          <ul id="completed"></ul>
+        </div>
+        <!-- <div id="thirdpage">
+          <div id="fourthpage">
+            <p>COMPLETED</p>
+            <hr>
+            <table width="100%">
+              <tr>
+                <td>
+                  <input
+                    type="checkbox"
+                    name="seethedoctor"
+                    id="seethedoctor"
+                  />
+                </td>
+                <td></td>
+                <td>see the doctor</td>
+                <td>
+                  <button>EDIT</button>
+                </td>
+              </tr>
+              <tr>
+                <td class="columone"></td>
+                <td class="columtwo"></td >
+                <td class="columthree"></td>
+
+                <td><button>DELETE</button></td>
+              </tr>
+              <tr></tr>
+            </table>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <script>
+      let numone = document.querySelector(".boxone");
+      let butOne = document.querySelector("#buttonone");
+      let addition = document.querySelector("#todolist");
+      butOne.addEventListener("click", () => {
+        let newli = document.createElement("li");
+        newli.textContent = numone.value;
+        console.log(newli);
+        addition.append(newli);
+      });
+
+      //        let addOne = document.querySelector("#secondpage");
+      //       let tab=document.querySelector(".tab")
+      //       butOne.addEventListener("click", () => {
+
+      //         let colone=document.createElement("tr");
+      //         colone.appendChild(numone.cloneNode(1));
+      //         console.log(colone);
+      // tab.appendChild(colone);
+      //      let rowthree = `<table><tr><td><input type="checkbox" name="Paybills" id="Paybills" /></td><td></td><td>numone.cloneNode()</td><td>EDIT</td></tr>
+      //        <tr>
+      //       <td></td>
+      //      <td></td>
+      //        <td></td>
+
+      //      <td><button>DELETE</button></td>
+      //    </tr></table>`;
+      //  thirdpage.appenchild((thirdpage.innerHTML = rowthree));
+      // });
+      // butOne("click", ()=>{
+      //   console.log(numone);
+      //   console.log("content");
+      // })
+
+      // function additonaltodo(){
+
+      // }
+
+      // butOne.addEventListener("click", () => {
+      //   let newcheckbox = document.createElement("input");
+      //   newcheckbox.type = "checkbox";
+      //   addition.appendChild(newcheckbox);
+      //   let li = document.createElement("li");
+      //   // let newcheckbox = document.createElement("input");
+      //   // newcheckbox.type = "checkbox";
+      //   // li.appendChild(newcheckbox);
+      //   let output = numone.value;
+      //   // (li.textContent = newcheckbox), output;
+      //   li.textContent = output;
+
+      //   let editbut = document.createElement("button");
+
+      //   editbut.textContent = "edit";
+      //   // editbut.id = "newtodoname";
+      //   editbut.onclick = replacetodo;
+      //   li.appendChild(editbut);
+      //   let delebut = document.createElement("button");
+      //   delebut.textContent = "delete";
+      //   li.appendChild(delebut);
+      //   // addition.appendChild(li);
+      //   addition.appendChild(li);
+      // });
+      // // function newtodoname() {
+      // //   let newcheckbox = document.createElement("input");
+      // //   newcheckbox.type = "checkbox";
+      // //   addition.appendChild(newcheckbox);
+      // //   let editInput = document.createElement("input");
+      // //   editInput.type = "checkbox";
+      // //   li.appendChild(editInput);
+      // //   let delebut = document.createElement("button");
+      // //   delebut.textContent = "delete";
+      // //   li.appendChild(delebut);
+      // //   addition.replaceChild(li, addition.lastElementChild);
+      // // }
+    </script>
+  </body>
+</html>

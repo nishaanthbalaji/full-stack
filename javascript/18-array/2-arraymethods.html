@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descrption" content="array methods" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // array methods
+      // 1] pop()/ push()==> add and remove items ath the end
+      //2] shift() / unshift()==> add and remove the items in the start
+
+      // add / remove the items inbetween start and end
+
+      // splice()
+
+      //removing the content
+      // syntax
+      // arr.splice(a, b) ==> return an array by removing the element start from "a" with the delete count "b"
+      // a==> start index
+      // b==> deletecount
+      let subjects = ["English", "maths", "physics", "chemistry"];
+      subjects.splice(1, 2);
+      console.log(subjects);
+
+      let fruits = ["apple", "orange", "mango", "bannana"];
+      console.log(fruits.splice(2, 2)); // removed element
+      console.log(fruits); // existing array after element removed
+
+      //remove and replace/ add the new element
+      // arr.splice(startIndex, deletecount, element1, element2, elementN);
+      let userName = ["john", "jack", "marry", "robbert"];
+      userName.splice(1, 2, "price", "ram", "raj");
+      console.log(userName);
+
+      let dept = ["cse", "it ", "eee"];
+      dept.splice(-3, 2, "mech");
+      console.log(dept);
+
+      // in string we use slice
+      // arr.slice(a,b)==> returns the elements in the range starts from "a" to "b-1"
+      //extracting the specified elements from the given array
+      //a==> startindex;
+      //b==> endindex
+
+      let subject = ["english", "maths", "physics", "chemistry"];
+      console.log(subject.slice(1, 3));
+      console.log(subject);
+      console.log(subject.splice(-3));
+
+      // concat(arr-1, arr-2, arr-3,......arr-n);
+      // not affect the orignal array
+      let arr = [1, 2];
+      console.log(arr);
+      let arr1 = [3, 4];
+      let arr2 = [5, 6];
+      console.log(arr.concat(arr1, arr2));
+
+      console.log(
+        [].concat(["john", "jack"], ["marry", "robbert"], ["prince"])
+      );
+
+      //  iterrating array element
+      //for(;;)
+      //for... of
+      //for...in
+      //arr.forEach()
+      // function(para-1, para-2,...... para-N)    //  para=>primitive values, function(call)
+
+      //Syntax
+      //  arr.forEach(function(element,index,arry)){
+
+      //  }
+
+      // Element=> access array element;
+      // index==> access the array index;
+      // array ==> array itself
+
+      // any name can be given but access will be happing in this order 1-element 2-array 3-array
+
+      let userNames = ["john", "jack", "marry", "robbert"];
+      userNames.forEach(function (userName, index, array) {
+        console.log(`username:${userName} , index:${index} , array:${array}`);
+      });
+
+      // skipping the index n array
+      userNames.forEach(function (userName) {
+        console.log(`userName:${userName}`);
+      });
+
+      // skipping element and array
+      userNames.forEach(function (userName, index) {
+        console.log(`index:${index}`);
+      });
+
+      // accesing only array
+      userNames.forEach(function (userName, index, array) {
+        console.log(`array:${array}`);
+      });
+
+      // forEach() with arrow function
+      userNames.forEach((userName, index, array) =>
+        console.log(`username:${userName} , index:${index} , array${array}`)
+      );
+
+      userNames.forEach((userName) => console.log(`username:${userName}`));
+
+      // searching an element in an array
+      // arr.indexOf("element ", pos);
+      let subj = ["englsh", "maths", "physics", "chemistry", "maths"];
+      console.log(subj.indexOf("maths")); // 1
+      console.log(subj.indexOf("englsh", 2)); // -1
+
+      // arr.lastIndexOf("element", postion);
+      console.log(subj.lastIndexOf("maths")); // 4
+
+      // arr.includes("elements" , pos)
+      // console.log(subj.includes("chemistry"));
+      console.log(subj.includes("chemistry", 4));
+      console.log(subj.includes("eng"));
+
+      // arr.find((element, index, arr) =>{
+      //   condition , true=> return the searching element
+      //   else, return undefined
+      // })
+      let searchElement = subj.find((element, index, array) => {
+        return element === "maths";
+      });
+      // console.log(searchElement);
+
+      // or
+
+      let searchElemen = subj.find(
+        (element, index, array) => element === "maths"
+      );
+
+      //console.log(searchElemen);
+      let studentId = +prompt("enter the id");
+      let students = [
+        { id: 1001, name: "john", age: "20", dept: "cse" },
+        { id: 1002, name: "jack", age: "20", dept: "it" },
+        { id: 1003, name: "marry", age: "18", dept: "ece" },
+        { id: 1004, name: "robbert", age: "21", dept: "eee" },
+        { id: 1005, name: "prince", age: "20", dept: "mech" },
+        { id: 1003, name: "ram", age: "23", dept: "civil" },
+      ];
+
+      let searchStudentId = students.find((element, index, array) => {
+        return element.id === studentId;
+      });
+      // in this case it will take as boolean as condition not given if any value given it will take as true in case of undefined empty string " " will be assigned  to variable that will take it as false
+      searchStudentId
+        ? console.log(searchStudentId)
+        : console.log("enter the valid id");
+
+      let subjec = ["english ", "maths", "physics", "chemistry", "maths"];
+
+      // arr.findIndex()
+      let index = subjec.findIndex((element) => element === "maths");
+      // console.log(index);
+
+      // arr.findLastIndex()
+      let lastIndex = subjec.findLastIndex((element) => element === "maths");
+      // console.log(lastIndex);
+
+      // arr.filter((element, index , array) =>    {
+      //   condition , true=> return all the matched element as an array
+      //   false , return empty array
+      //}
+      let productName = prompt("enter the product name");
+      let products = [
+        {
+          id: 1,
+          title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+          price: 109.95,
+          description:
+            "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+          category: "men's clothing",
+          image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+
+          rating: {
+            rate: 3.9,
+            count: 120,
+          },
+        },
+
+        {
+          id: 2,
+          title: "Mens Casual Premium Slim Fit T-Shirts ",
+          price: 22.3,
+          description:
+            "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+          category: "men's clothing",
+          image:
+            "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+
+          rating: {
+            rate: 4.1,
+            count: 259,
+          },
+        },
+
+        {
+          id: 3,
+          title: "Mens Cotton Jacket",
+          price: 55.99,
+          description:
+            "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+          category: "men's clothing",
+          image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+
+          rating: {
+            rate: 4.7,
+            count: 500,
+          },
+        },
+
+        {
+          id: 4,
+          title: "Mens Casual Slim Fit",
+          price: 15.99,
+          description:
+            "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+          category: "jewelery",
+          image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+
+          rating: {
+            rate: 2.1,
+            count: 430,
+          },
+        },
+
+        {
+          id: 5,
+          title:
+            "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+          price: 695,
+          description:
+            "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+          category: "jewelery",
+          image:
+            "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+
+          rating: {
+            rate: 4.6,
+            count: 400,
+          },
+        },
+      ];
+
+      let searchResult = products.filter((ele) => {
+        return ele.category === productName;
+      });
+
+      //console.log(searchResult);
+
+      searchResult.length !== 0
+        ? console.log(searchResult)
+        : console.log("no product found");
+
+      // transform an  array;
+      let subjectss = ["english", "maths", "physics", "chemistry", "maths"];
+      let newarr = subjectss.map((subject, index, array) => {
+        return `${subject} =${subject.length} `;
+      });
+
+      console.log(newarr);
+
+      let student = [
+        { id: 1001, name: "john", age: "20", dept: "cse" },
+        { id: 1002, name: "jack", age: "20", dept: "it" },
+        { id: 1003, name: "marry", age: "18", dept: "ece" },
+        { id: 1004, name: "robbert", age: "21", dept: "eee" },
+        { id: 1005, name: "prince", age: "20", dept: "mech" },
+        { id: 1003, name: "ram", age: "23", dept: "civil" },
+      ];
+
+      let idArr = student.map((stu) => stu.id);
+      //console.log(idArr);
+
+      let deptArr = student.map((student) => {
+        return { id: student.id };
+      });
+      //console.log(deptArr);
+
+      // using spread
+
+      // spread can be used in both object and array
+
+      // add new property / element  without modifying  existing property / element;
+      // syntax
+
+      // ...objName
+      // ...arrName
+
+      let newstudent = student.map((stu) => {
+        return {
+          ...student,
+          collage: "skill safari",
+        };
+      });
+      console.log(newstudent);
+
+      //arr.reverse()
+      let num = [1, 2, 3, 4, 5];
+      console.log(num.reverse());
+
+      //split () and join()
+      // split()
+      //str.split(delimiter)
+      let stuudent = "john, jack, mary, robert ";
+      console.log(stuudent.split(", "));
+
+      let company = "skillsafari";
+      console.log(company.split("s"));
+      console.log(company.split(""));
+
+      // arr.join()
+
+      let stuuudent = ["john", "jack", "marry", "robbert"];
+      console.log(stuuudent.join("-"));
+      console.log(stuuudent.join(","));
+
+      // skillSafari=>irafaslliks
+      let name = "skillSafari";
+      console.log(name.split("").reverse().join(""));
+
+      // arr.reduce()
+      // arr.reduceRight()
+      // syntax
+      // arr.reduce((accumulator , element , index , array))==>{
+      // logics
+      //} , [initial value]
+
+      let numm = [1, 2, 3, 4, 5];
+      let sum = numm.reduce((acc, ele) => {
+        return acc + ele;
+      }, 0); // zero giving her is optional
+      console.log(sum);
+      let sttudent = [
+        { id: 1001, name: "john", age: "20", dept: "cse" },
+        { id: 1002, name: "jack", age: "20", dept: "it" },
+        { id: 1003, name: "marry", age: "18", dept: "ece" },
+        { id: 1004, name: "robbert", age: "21", dept: "ece" },
+        { id: 1005, name: "prince", age: "20", dept: "mech" },
+        { id: 1003, name: "ram", age: "23", dept: "civil" },
+      ];
+
+      let eceAge = sttudent
+        .filter((element) => element.dept === "ece")
+        .reduce((acc, element) => acc + element.age, 0);
+      console.log(eceAge);
+
+      // Array.isArray()
+
+      // type of will give output as object for both array and object
+      // to know whether it is array or not we use Array.isarray
+      let studen = {};
+      let start = [];
+      console.log(Array.isArray(start));
+      console.log(typeof start);
+      console.log(typeof studen);
+      console.log(Array.isArray(studen));
+
+      //  another two methods in array
+      // some()
+      // every()
+
+      let studentss = [
+        {
+          id: 1001,
+          name: "john",
+          age: "20",
+          dept: "cse",
+          collage: "skillsafari",
+        },
+        {
+          id: 1002,
+          name: "jack",
+          age: "20",
+          dept: "it",
+          collage: "skillsafari",
+        },
+        {
+          id: 1003,
+          name: "marry",
+          age: "18",
+          dept: "ece",
+          collage: "skillsafari",
+        },
+        {
+          id: 1004,
+          name: "robbert",
+          age: "21",
+          dept: "eee",
+          collage: "skillsafari",
+        },
+        {
+          id: 1005,
+          name: "prince",
+          age: "20",
+          dept: "mech",
+          collage: "skillsafari",
+        },
+        {
+          id: 1003,
+          name: "ram",
+          age: "23",
+          dept: "civil",
+          collage: "skillsafari",
+        },
+      ];
+      let checkChallange = studentss.some((student) => {
+        return student.dept === "civil";
+      });
+      console.log(checkChallange);
+      let checkCivil = studentss.every((element) => {
+        return element.dept === "civil";
+      });
+      console.log(checkCivil);
+      let checkCollage = studentss.every((ele) => {
+        return ele.collage === "skillsafari";
+      });
+      console.log(checkCollage);
+    </script>
+  </body>
+</html>

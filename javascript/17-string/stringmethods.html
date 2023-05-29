@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descrption" content="string" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // String
+      // Character
+      // sub-string==> single or group of characters is substring
+
+      // searching for substring
+      //   1] str.indexof() and str.lastindexof()
+      // 2} str.includes() , str.startswith(), str.endswith()  ==>
+
+      //    str.indexOf(a,b);
+      //    a==> search String
+      //    b==> search start position
+
+      // syntax
+      //str.indexOf("substring", postion)==> if substring found , returns index or position  , else return -1
+      let str = "Hello, world";
+      // str = str.toLowerCase();
+      console.log(str.indexOf("world"));
+      console.log(str.indexOf("world", 8));
+      console.log(str.indexOf("e"));
+      console.log(str.indexOf("o"));
+      console.log(str.indexOf("o", 5));
+
+      let searching = prompt("enter the substring");
+      let pos = 0;
+      while (true) {
+        let foundPos = str.indexOf(searching, pos);
+
+        if (foundPos == -1) break;
+        console.log(
+          `The search string is :${searching} and the found position is ${foundPos}`
+        );
+        pos = foundPos + 1;
+      }
+
+      //str.lastIndexOf(a, b)==> return the last ocuurence index
+      // a==>substring
+      // b==>search start index
+      //this is same as indexof if charaacter with multiple ocuurance aries it will only display last character occurance instead of first ocuurance
+
+      console.log(str.lastIndexOf("o"));
+      console.log(str.lastIndexOf("l"));
+      console.log(str.lastIndexOf("H"));
+
+      //  str.includes(a,b)==> return true if substring exits or else return false
+      //a==> substring;
+      //b===> start search string;
+      console.log(str.includes("ello"));
+      console.log(str.includes(", "));
+      console.log(str.includes("abc"));
+      console.log(str.includes("o", 9));
+      console.log(str.includes("o", 3));
+      console.log(str.includes("He"));
+
+      // str.startsWith( search sting , position);  using postion here is useless as if i put 0 postion only it will search from start if other position i use it will not start search  from start  searching from start is the function of this code then it will display correct output instaed of putting only 0 position  i can avoid it.
+      console.log(str.startsWith("Hello"));
+      console.log(str.startsWith("world"));
+      console.log(str.startsWith(", "));
+      console.log(str.startsWith("Hel", 1));
+
+      // str.endsWith( search string , position) ; maximum we wont use position here
+      //  not support negative values
+      console.log(str.endsWith("world", -1));
+      console.log(str.endsWith("ld"));
+      console.log(str.endsWith("Hello"));
+
+      // extracting subtring from string using position
+      //1} str.slice
+      // 2}str.substring
+      // 3} str.substr
+
+      //  str.slice(a, b); return substring from in the range from "a " positon to "b-1" position
+      // a==> start position
+      // b==> end position
+      console.log(str.slice(0, 5)); // Hello
+
+      console.log(str.slice(5, 0)); // empty
+      console.log(str.slice(7)); // world
+      console.log(str.slice(5, 7)); //", "
+      console.log(str.slice(2, 4)); // ll
+      console.log(str.slice(-5)); // world
+      console.log(str.slice(-5, 12)); // world
+
+      //str.substring(a,b);  return "substring" in the range from "a" position to "b-1" position
+      //  a==> start position
+      // b==> end position
+      //not support  negative value
+      console.log(str.substring(0, 5));
+      console.log(str.substring(5, 0));
+      console.log(str.substring(12, 7));
+
+      //str.substr(a, b); ===>return substring based on startindex and length
+      //a==> start index
+      //b==> length
+
+      console.log(str.substr(0, 10));
+      console.log(str.substr(-5, 5));
+
+      // Str.codePointAt(pos);
+      // String.fromCodePoint(code);
+
+      console.log(str.codePointAt(0)); // hexa decimal code for H is 72
+
+      console.log(str.codePointAt(1)); // hexa decimal code for e is 101
+      for (let i = 0; i < str.length; i++) {
+        // for of loop we not used here because we cannot add initizaliation and condition in for of loop , and for of loop will only display character we cannot take hexadecimal value from it
+        console.log(str.codePointAt(i));
+      }
+
+      console.log(String.fromCodePoint(72));
+      console.log(String.fromCodePoint(101));
+    </script>
+  </body>
+</html>

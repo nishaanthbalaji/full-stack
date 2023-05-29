@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: darkblue;
+
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  min-height: 10vh;
+}
+
+.one {
+  /* height: 5vh; */
+
+  margin-top: 3vh;
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 150px;
+}
+.getstarted {
+  /* float: right; */
+  border-radius: 20px;
+  width: 120px;
+  height: 35px;
+  background: darkblue;
+  color: white;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  height: 90vh;
+  /* justify-content: space-between;
+  padding: 20px;*/
+}
+.part1 {
+  width: 500px;
+
+  margin-top: 50px;
+  height: 100vh;
+
+  padding-left: 100px;
+  padding-top: 100px;
+}
+
+.part1 > .max {
+  font-weight: bolder;
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+}
+.part1 > .our {
+  font-size: 16px;
+  opacity: 0.5;
+}
+.getstarted2 {
+  /* background-image: linear-gradient( 64.3deg,  rgba(254,122,152,0.81) 17.7%, rgba(255,206,134,1) 64.7%, rgba(172,253,163,0.64) 112.1% ); */
+  background-image: linear-gradient(
+    68.3deg,
+    rgba(245, 177, 97, 1) 0.4%,
+    rgba(236, 54, 110, 1) 100.2%
+  );
+  font-size: 16px;
+  border-radius: 20px;
+  height: 45px;
+  color: white;
+  width: 130px;
+}
+
+.part2 {
+  /* position: relative;
+right:350px; */
+  width: 400px;
+  margin-top: 50px;
+  height: 80vh;
+}
+
+img {
+  height: 400px;
+  width: 250px;
+  border-radius: 40%;
+
+  position: relative;
+  left: 350px;
+  top: 55px;
+  z-index: 0;
+}
+.classhours {
+  position: relative;
+  bottom: 110px;
+  left: 250px;
+
+  /* border: 1px solid green; */
+
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  background: white;
+  border-radius: 20px;
+  z-index: 2;
+}
+.followers {
+  width: 120px;
+  height: 80px;
+  text-align: center;
+  padding: 10px;
+  background: white;
+  border-radius: 20px;
+  position: relative;
+  left: 560px;
+  bottom: 400px;
+  /* position: absolute; */
+  z-index: 1;
+}
+.skew {
+  height: 345px;
+  width: 300px;
+  background: #4158d0;
+  /* background-color: #FF3CAC; */
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
+
+  position: relative;
+  left: 490px;
+
+  transform: skewy(-41deg);
+  /* position: absolute;  */
+  bottom: 600px;
+  z-index: -1;
+}
+.grid {
+  display: grid;
+  background: #e1ebee;
+  min-height: 100vh;
+  grid-template-areas:
+    "a b c"
+    "d e f";
+  padding: 0px 70px;
+}
+
+.animation {
+  grid-area: b;
+}
+.design {
+  grid-area: c;
+}
+
+.photography {
+  grid-area: d;
+  margin-top: 60px;
+}
+.crypto {
+  grid-area: e;
+  margin-top: 60px;
+}
+.business {
+  grid-area: f;
+  margin-top: 60px;
+}
+
+.animation,
+.design,
+.photography,
+.crypto,
+.business {
+  background: white;
+  border-radius: 15px;
+  margin: 30px 10px;
+
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+}
+
+.checkout {
+  grid-area: a;
+  font-size: 30px;
+  background-image: linear-gradient(
+    68.3deg,
+    rgba(245, 177, 97, 1) 0.4%,
+    rgba(236, 54, 110, 1) 100.2%
+  );
+  border-radius: 15px;
+  margin: 30px 10px;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+  padding-top: 40px;
+}
+.checkout p {
+  color: white;
+}
+i {
+  border: 1px solid red;
+  font-size: 30px;
+  padding: 10px;
+  background-image: linear-gradient(
+    68.3deg,
+    rgba(245, 177, 97, 1) 0.4%,
+    rgba(236, 54, 110, 1) 100.2%
+  );
+  color: white;
+  border-radius: 30px;
+  transform: translateY(-30px) translateX(20px);
+}
+footer {
+  height: 15vh;
+  background: darkblue;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 140px;
+  padding-top: 30px;
+  margin-top: 120px;
+}
+footer > p {
+  color: white;
+  font-size: 30px;
+  padding-left: 80px;
+}
+.getstarted3 {
+  width: 100px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  color: white;
+}
+@media screen and (max-width: 576px) {
+  .one {
+    height: 30vh;
+    padding-left: 20px;
+    padding-right: 40px;
+    width: 100%;
+    font-size: 30px;
+  }
+  .one > input {
+    height: 70px;
+    width: 170px;
+    border-radius: 50px;
+    font-size: 25px;
+  }
+  .page {
+    min-height: 180vh;
+
+    display: block;
+  }
+  .part1 {
+    margin: 0px;
+    height: 70vh;
+    padding: 0px;
+    width: 576px;
+    padding: 0px 20px;
+  }
+  .part2 {
+    height: 90vh;
+  }
+  .part1 > .max {
+    font-size: 60px;
+  }
+  .part1 > .our {
+    font-size: 20px;
+  }
+  .getstarted2 {
+    background-image: linear-gradient(
+      68.3deg,
+      rgba(245, 177, 97, 1) 0.4%,
+      rgba(236, 54, 110, 1) 100.2%
+    );
+    height: 60px;
+    width: 190px;
+    font-size: 20px;
+    border-radius: 50px;
+  }
+  .followers {
+    left: 400px;
+  }
+  .classhours {
+    left: 50px;
+    bottom: 50px;
+  }
+  img {
+    left: 90px;
+    width: 400px;
+    height: 400px;
+    border-radius: 100%;
+  }
+  .skew {
+    display: none;
+  }
+  .grid {
+    min-height: 100vh;
+    grid-template-areas:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e"
+      "f";
+    padding: 0px 20px;
+  }
+  .animation,
+  .design,
+  .photography,
+  .crypto,
+  .business {
+    width: 500px;
+    height: 350px;
+    font-size: 20px;
+    padding-top: 20px;
+  }
+  /* .animation {
+    margin-top: 110px;
+  } */
+  i {
+    transform: translateX(20px) translateY(-40px);
+  }
+  .checkout {
+    width: 500px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .one {
+    padding: 0px 50px;
+    font-size: 30px;
+  }
+
+  .one > input {
+    height: 50px;
+    width: 140px;
+    border-radius: 50px;
+  }
+  .part1 {
+    padding-left: 10px;
+    width: 420px;
+    padding-top: 20px;
+  }
+  .part2 {
+    width: 348px;
+  }
+  img {
+    height: 350px;
+    width: 200px;
+    position: relative;
+    left: 80px;
+    top: 0px;
+  }
+
+  .skew {
+    height: 300px;
+    width: 100px;
+    position: relative;
+    bottom: 570px;
+    left: 248px;
+    transform: skewY(-46deg);
+  }
+  .followers {
+    left: 210px;
+    bottom: 470px;
+    width: 110px;
+    height: 90px;
+  }
+  .classhours {
+    left: 20px;
+    bottom: 80px;
+  }
+  .grid {
+    padding: 0px 20px;
+    grid-template-areas:
+      "a b"
+      "c d"
+      "e f";
+  }
+}

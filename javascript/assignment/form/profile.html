@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="profile" />
+    <title>profile</title>
+  </head>
+  <style>
+    body {
+      background: url(./);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+  <body>
+    <h3>YOUR DETAILS<span id="username"></span></h3>
+    <p id="displayname"></p>
+    <p id="email"></p>
+    <p id="password"></p>
+    <p id="language"></p>
+
+    <p><button id="edit">EDIT</button> <button id="logout">log out</button></p>
+    <button id="buy">BUY PRODUCTS</button>
+    <script>
+      let userdetails = sessionStorage;
+      console.log(sessionStorage);
+      let username = document.querySelector("#username");
+      let displayname = document.querySelector("#displayname");
+      let email = document.querySelector("#email");
+      let password = document.querySelector("#password");
+      let language = document.querySelector("#language");
+      let key = sessionStorage.key(1);
+      let details = JSON.parse(sessionStorage.getItem(key));
+      console.log(details);
+      username.textContent = details.username;
+      displayname.textContent = details.username;
+      email.textContent = details.email;
+      password.textContent = details.password;
+      language.textContent = language.textContent;
+      let logout = document.querySelector("#logout");
+      logout.addEventListener("click", (e) => {
+        e.preventDefault();
+        let idurl = new URLSearchParams(location.search);
+        console.log(idurl.values());
+        let [id] = idurl.values();
+        sessionStorage.removeItem(id);
+        alert("user loged out sucessfully");
+        window.location.href = "./register.html";
+      });
+      let edit = document.querySelector("#edit");
+      edit.addEventListener("click", (e) => {
+        e.preventDefault();
+        let urlid = new URLSearchParams(location.search);
+        let [id] = urlid.values();
+        // sessionStorage.removeItem(id);
+        let;
+      });
+      let buy = document.querySelector("#buy");
+      buy.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = "./page.html";
+      });
+    </script>
+  </body>
+</html>

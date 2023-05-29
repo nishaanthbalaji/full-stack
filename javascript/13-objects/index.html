@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descrption" content="object-basics" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // object basiscs
+      // it is a collection , stores the data in the form of key:value pair
+      //   // object can be created as an empty object with optional properties
+      //   let userDetails = {
+      //     name: "john",
+      //     age: 30,
+      //     isAdmin: true,
+      //   };
+      //   console.log(userDetails);
+
+      //   creating an Object
+      //   empty object
+      // 1}let user = new object(); //oject constructor syntax
+      // 2}let user ={};  //object literal syntax
+
+      // object literal syntax
+      //   let objectname ={
+      //     key:value,
+
+      //   }
+      //   {......}=> object literal area
+
+      // object creation
+      let userDetails = {};
+      console.log(userDetails);
+      //    adding properties
+      userDetails.name = "john";
+      userDetails.age = 15;
+      userDetails.isAdmin = true;
+      console.log(userDetails);
+      //   accessing the property value
+      console.log(userDetails.age);
+      console.log(userDetails.name);
+      //   modifying the property value
+      userDetails.name = "jack";
+      console.log(userDetails.name);
+      //   deleting the property
+      // delete userDetails.age;
+      console.log(userDetails);
+
+      //   using multiword property
+
+      // square bracket method
+      let user = {
+        ["first name"]: "harry",
+        ["LAST NAME"]: "porter",
+        age: 30,
+      };
+      console.log(user["age"]);
+
+      let details = {};
+      details["name"] = "ram";
+      details["lastn"] = "kumar";
+      console.log(details["name"]);
+      details["date of birth"] = "12 - 12 - 12";
+      console.log(details["date of birth"]);
+      console.log(details);
+
+      //   in operator check propery existance;
+      // output will be in Boolean
+      // boolean===>true or false
+      console.log("age" in userDetails);
+
+      //   objects in functions
+      function userDe(firstName, lastName, age) {
+        return `${firstName}, ${lastName},${age}`;
+      }
+      console.log(userDe("john", "chan", 60));
+
+      //   short hand notation
+      function userD(firstName, lastName, age) {
+        return {
+          firstName,
+          lastName,
+          age,
+        };
+      }
+      console.log(userD("jo", "ro", 15));
+      //   nested properties
+      let use = {
+        name: "john",
+        age: 14,
+        address: {
+          city: "chennai",
+          state: "tn",
+        },
+      };
+      console.log(use);
+      console.log(use.address);
+      console.log(use.address.city);
+      let usser = {
+        firstName: "john", // all keys are in string only but for multi words only we should use string while typing the key name eg "last name "" for first name no string needed
+
+        ["last name"]: "jack",
+        age: 30,
+      };
+      let ke = prompt("enter any property key"); // prompt output will be converted into string
+      console.log(use[ke]);
+      for (const lock in userDetails) {
+        console.log(typeof lock);
+        console.log(`${lock}=> ${userDetails[lock]}`);
+      }
+    </script>
+  </body>
+</html>

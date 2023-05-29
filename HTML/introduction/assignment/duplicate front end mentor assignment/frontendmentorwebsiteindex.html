@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="front-end-mentor" />
+    <title>skilled</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: darkblue;
+
+        font-family: "Poppins", sans-serif;
+      }
+      #page {
+        padding-left: 100px;
+        padding-right: 250px;
+        max-height: 100vh;
+      }
+      .one {
+        height: 50px;
+        /* background: yellow; */
+        margin-top: 20px;
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+      }
+      /* .one>h2{
+            float: left; 
+        }*/
+
+      .getstarted {
+        /* float: right; */
+        border-radius: 20px;
+
+        height: 30px;
+        background: darkblue;
+        color: white;
+      }
+
+      .two {
+        /* background: yellow; */
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: space-between;
+        padding: 20px;
+      }
+      .getstarted2 {
+        height: 40px;
+        color: white;
+        width: 120px;
+        /* background-image: linear-gradient( 64.3deg,  rgba(254,122,152,0.81) 17.7%, rgba(255,206,134,1) 64.7%, rgba(172,253,163,0.64) 112.1% ); */
+        background-image: linear-gradient(
+          68.3deg,
+          rgba(245, 177, 97, 1) 0.4%,
+          rgba(236, 54, 110, 1) 100.2%
+        );
+        font-size: 20px;
+        border-radius: 20px;
+      }
+      .part1 {
+        width: 400px;
+        height: auto;
+      }
+      .part2 {
+        /* position: relative;
+    right:350px; */
+        width: 400px;
+        height: auto;
+      }
+
+      img {
+        height: 500px;
+        width: 350px;
+        border-radius: 40%;
+        /* position: relative;
+        bottom: 300px; */
+        /* background-image: linear-gradient( 68.3deg,  rgba(245,177,97,1) 0.4%, rgba(236,54,110,1) 100.2% ); */
+        position: relative;
+        left: 70px;
+        z-index: 0;
+      }
+      .classhours {
+        position: relative;
+        bottom: 150px;
+        right: 5px;
+        /* border: 1px solid green; */
+
+        width: 150px;
+        text-align: center;
+        padding: 10px;
+        background: white;
+        border-radius: 20px;
+      }
+      .followers {
+        width: 120px;
+        height: 80px;
+        text-align: center;
+        padding: 10px;
+        background: white;
+        border-radius: 20px;
+        position: relative;
+        left: 340px;
+        bottom: 500px;
+        /* position: absolute; */
+        z-index: 1;
+      }
+      .skew {
+        height: 400px;
+        width: 400px;
+        background: #4158d0;
+        /* background-color: #FF3CAC; */
+        background-image: linear-gradient(
+          225deg,
+          #ff3cac 0%,
+          #784ba0 50%,
+          #2b86c5 100%
+        );
+
+        position: relative;
+        left: 365px;
+
+        transform: skewy(-35deg);
+        /* position: absolute;  */
+        bottom: 770px;
+        z-index: -1;
+      }
+      .grid {
+        display: grid;
+        grid-template-areas:
+          "a b c "
+          "d e f ";
+
+        background: #e1ebee;
+
+        margin: 0px 100px;
+        /* background: green; */
+        font-size: 20px;
+      }
+      .checkout,
+      .animation,
+      .design,
+      .photography,
+      .crypto,
+      .business {
+        padding: 10px;
+
+        border-radius: 15px;
+        background: white;
+        margin: 20px;
+      }
+      .checkout {
+        grid-area: a;
+        font-size: 40px;
+        background-image: linear-gradient(
+          68.3deg,
+          rgba(245, 177, 97, 1) 0.4%,
+          rgba(236, 54, 110, 1) 100.2%
+        );
+        /* font-weight: 400; */
+        color: white;
+        border-radius: 15px;
+      }
+      .animation {
+        grid-area: b;
+      }
+      .design {
+        grid-area: c;
+      }
+
+      .photography {
+        grid-area: d;
+      }
+      .crypto {
+        grid-area: e;
+      }
+      .bussines {
+        grid-area: f;
+      }
+      /* .fa-sharp{
+    width: 14px;
+    height: 16px;
+    font-size: 15px;
+} */
+      i {
+        border: 1px solid red;
+        font-size: 30px;
+        padding: 10px;
+        background-image: linear-gradient(
+          68.3deg,
+          rgba(245, 177, 97, 1) 0.4%,
+          rgba(236, 54, 110, 1) 100.2%
+        );
+        border-radius: 50px;
+        transform: translateY(-40px) translateX(20px);
+      }
+      footer {
+        height: 100px;
+        background: darkblue;
+        /* position: relative; */
+        /* bottom: 330px; */
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 150px;
+      }
+      footer > p {
+        /* position: relative;
+    top: 20px;
+    left: 150px;  */
+        /* margin-left: 150px; */
+        padding-left: 150px;
+        flex-grow: 1;
+      }
+      footer > input {
+        font-size: 15px;
+        border-radius: 50px;
+        height: 50px;
+        width: 120px;
+        color: white;
+        background-color: #4158d0;
+        background-image: linear-gradient(
+          43deg,
+          #4158d0 0%,
+          #c850c0 46%,
+          #ffcc70 100%
+        );
+        margin-right: 150px;
+        /* position: relative;
+top: 30px;
+right: 150px;  */
+      }
+      @media screen and (max-width: 500px) {
+        .part1 {
+          width: 450px;
+        }
+        .skew {
+          display: none;
+        }
+        #page {
+          padding: 0 0;
+        }
+
+        /* img{
+        width: 300px;
+        height: 300px;
+    } */
+        .two {
+          height: 1050px;
+        }
+        .grid {
+          /* position: relative;
+        top: 100px; */
+          margin: 0px 0px;
+          grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d"
+            "e";
+        }
+        footer {
+          margin: 0px;
+          padding: 0px;
+        }
+        footer > p {
+          flex-grow: 0;
+          padding: 0px;
+        }
+        footer > input {
+          margin: 0px;
+        }
+      }
+
+      @media screen and (min-width: 501px) and (max-width: 1350px) {
+        #page {
+          padding-left: 50px;
+          padding-right: 0px;
+        }
+        .skew {
+          height: 480px;
+          width: 150px;
+          left: 345px;
+          bottom: 760px;
+        }
+        .followers {
+          left: 300px;
+          bottom: 620px;
+          width: 150px;
+          height: 100px;
+        }
+        .classhours {
+          bottom: 120px;
+        }
+        .grid {
+          grid-template-areas:
+            "a b"
+            "c d"
+            "e f";
+          margin: 0px 50px;
+        }
+        footer > p {
+          padding-left: 50px;
+        }
+        footer > input {
+          margin-right: 50px;
+        }
+      }
+      @media screen and (min-width: 992) {
+      }
+    </style>
+  </head>
+  <body>
+    <section id="page">
+      <div class="one">
+        <h2 class="skilled">skilled</h2>
+        <input class="getstarted" type="button" value="Get started" />
+      </div>
+      <div class="two">
+        <div class="part1">
+          <p style="font-weight: bold; font-size: 50px">
+            Maximize skill , <br />
+            minimize budget
+          </p>
+          <br />
+          <p style="font-size: 25px; opacity: 0.5" class="our">
+            Our modern course acroos a range of in-demand<br />
+            skills will give you the knowledge you need to live<br />
+            the life you want.
+          </p>
+          <br />
+          <input type="button" value="Get started" class="getstarted2" />
+        </div>
+
+        <div class="part2">
+          <img src="./image/pexels-andrea-piacquadio-935743.jpg" alt="image" />
+          <div class="classhours">
+            <p style="opacity: 0.5">Course hours</p>
+            <p style="font-size: 30px"><b>1,451</b></p>
+          </div>
+          <div class="followers">
+            <p style="opacity: 0.5">Followers</p>
+            <p style="font-size: 30px"><b>29k</b></p>
+          </div>
+          <div class="skew"></div>
+        </div>
+      </div>
+    </section>
+    <section class="grid">
+      <div class="checkout">
+        <p
+          style="
+            text-align: center;
+            padding-top: 50px;
+            font-weight: bold;
+            color: white;
+            border-radius: 15px;
+          "
+        >
+          Check out our<br />
+          most popular <br />courses !
+        </p>
+      </div>
+      <div class="animation">
+        <i class="fa-solid fa-person-running"></i><br /><br />
+        <h1>Animation</h1>
+        <br />
+        <p style="opacity: 0.5">
+          Learn the latest animation techniques <br />
+          to create stunning motion design and<br />
+          captivate your audience
+        </p>
+        <br /><br />
+        <p style="color: #fd5c63">Get started</p>
+      </div>
+      <div class="design">
+        <i class="fa-solid fa-book"></i><br /><br />
+        <h1>Design</h1>
+        <br />
+
+        <p style="opacity: 0.5">
+          create beautiful usable interfaces to<br />
+          help shape the future of how the web<br />
+          looks
+        </p>
+        <br /><br />
+        <p style="color: #fd5c63">Get started</p>
+      </div>
+      <div class="photography">
+        <i class="fa-solid fa-camera"></i>
+        <h1>Photography</h1>
+        <br />
+        <p style="opacity: 0.5">
+          Explore critical fundamentals like <br />
+          lighting , compostion and focus to<br />
+          capture exceptional photos.
+        </p>
+        <br />
+        <p style="color: #fd5c63">Get started</p>
+      </div>
+      <div class="crypto">
+        <i class="fa-solid fa-chess-board"></i><br /><br />
+        <h1>Crypto</h1>
+        <br />
+        <p style="opacity: 0.5">
+          All ypu need to know to get started<br />
+          investing in crypto . GO from beginner <br />
+          to advanced with this 54 hour course
+        </p>
+        <br /><br />
+        <p style="color: #fd5c63">Get started</p>
+      </div>
+      <div class="business">
+        <i class="fa-sharp fa-solid fa-bag-shopping"></i><br /><br />
+        <h1>Business</h1>
+        <br />
+
+        <p style="opacity: 0.5">
+          A step-by-step playbook to help you<br />
+          start , scale , and sustain your businees<br />
+          without outside investment.
+        </p>
+        <br /><br />
+        <p style="color: #fd5c63">Get started</p>
+      </div>
+    </section>
+
+    <footer>
+      <p style="font-size: 40px; color: white">skilled</p>
+      <input type="button" value="Get started" />
+    </footer>
+  </body>
+</html>

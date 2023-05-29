@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="tablet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>tablet</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+         /* background-color: #8ec5fc;
+        background-color: #8ec5fc;
+        background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%); 
+         background: #b0c4de;  */
+        color: darkblue;
+      }
+      .left {
+        background: left;
+        margin-left: 60px;
+        margin-right: 30px;
+        width: 800px;
+        margin-top: 60px;
+      }
+
+      .one {
+        height: 50px;
+        /* background: yellow; */
+        margin-top: 20px;
+      }
+      .getstarted {
+        float: right;
+        border-radius: 20px;
+
+        height: 30px;
+        background: darkblue;
+        color: white;
+      }
+      .skilled {
+        float: left;
+      }
+      .two {
+        /* background: yellow; */
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap; 
+      }
+      .part1,
+      .part2 {
+        width: 400px;
+      }
+      .getstarted2 {
+        height: 40px;
+        color: white;
+        width: 120px;
+        /* background-image: linear-gradient( 64.3deg,  rgba(254,122,152,0.81) 17.7%, rgba(255,206,134,1) 64.7%, rgba(172,253,163,0.64) 112.1% ); */
+        background-image: linear-gradient(
+          68.3deg,
+          rgba(245, 177, 97, 1) 0.4%,
+          rgba(236, 54, 110, 1) 100.2%
+        );
+        font-size: 20px;
+        border-radius: 20px;
+      }
+      /* .part2{
+        /* float: right; 
+    }  */
+      img {
+        height: 500px;
+        width: 350px;
+        border-radius: 40%;
+        position: relative;
+        left: 50px;
+        /* position: relative;
+        bottom: 300px; */
+        /* background-image: linear-gradient( 68.3deg,  rgba(245,177,97,1) 0.4%, rgba(236,54,110,1) 100.2% ); */
+      }
+      .classhours {
+        /* position: relative;
+        bottom: 450px;
+        right: 80px;  */
+        /* border: 1px solid green; */
+        height: 80px;
+        width: 120px;
+        text-align: center;
+        padding: 10px;
+        background: white;
+        border-radius: 20px;
+        position: relative;
+        bottom: 90px;
+      }
+      .followers {
+        width: 120px;
+        height: 80px;
+        text-align: center;
+        padding: 10px;
+        background: white;
+        border-radius: 20px;
+        /* position: relative;
+    left: 280px;
+    bottom: 850px;  */
+        position: relative;
+        bottom: 600px;
+        left: 300px;
+      }
+      .three{
+        display: grid;
+        flex-wrap: wrap;
+        grid-template-areas: 
+        "a b"
+        "c d";
+        gap: 20px;
+        background: #E1EBEE;
+   
+      
+      }
+      .checkout{
+        grid-area: a;
+        font-size: 24px;
+        background-image: linear-gradient( 68.3deg,  rgba(245,177,97,1) 0.4%, rgba(236,54,110,1) 100.2% );
+        font-weight: 400;
+        color: white;
+        border-radius: 15px;
+        margin-left: 10px;
+        margin-top: 10px;
+
+    }
+    .animation{
+        grid-area: b;
+        margin-right: 10px;
+        margin-top: 10px;
+
+    }
+    .design{
+        grid-area: c;
+        margin-left: 10px;
+
+    }
+
+    .photography{
+        grid-area: d;
+        margin-right: 10px;
+
+    }
+.animation,.design,.photography{
+  flex-grow: calc(1fr);
+}
+    
+    .animation,.design,.photography,.crypto,.business{
+        padding: 10px;
+        
+        border-radius: 15px;
+        background: white;
+        
+    } 
+
+
+      i {
+        /* border: 1px solid red; */
+        font-size: 30px;
+        padding: 10px;
+        background-image: linear-gradient(
+          68.3deg,
+          rgba(245, 177, 97, 1) 0.4%,
+          rgba(236, 54, 110, 1) 100.2%
+        );
+        border-radius: 50%;
+      }
+      .right{
+        flex-wrap: wrap;
+      }
+      #content{
+        display: flex;
+      }
+      .grid2{
+        display: grid;
+        flex-wrap: wrap;
+        width: 800px;
+        grid-template-areas: 
+        "e f";
+        
+        gap: 20px;
+        background: #E1EBEE;
+   
+      
+      }
+      .crypto{
+        grid-area: e;
+        margin-top: 10px;
+        
+    }
+    .business{
+        grid-area: f;
+margin-top: 10px;
+    }
+    footer{
+      height: 50px;
+      background: darkblue;
+    }
+    footer>p{
+      float: left;
+      padding-left: 30px;
+      padding-top: 15px;
+      font-size: 20px;
+    }
+     footer>input{
+      float: right;
+      background-image: linear-gradient(
+          68.3deg,
+          rgba(245, 177, 97, 1) 0.4%,
+          rgba(236, 54, 110, 1) 100.2%
+        );
+        font-size: 20px;
+        padding-right: 30px;
+        margin-top: 15px;
+        
+        border-radius: 50px;
+        text-align: center;
+     } 
+    </style>
+  </head>
+  <body>
+    <section id="content">
+      <div class="left">
+        <div class="one">
+          <h2 class="skilled">skilled</h2>
+          <input class="getstarted" type="button" value="Get started" />
+        </div>
+        <div class="two">
+          <div class="part1">
+            <p style="font-weight: bold; font-size: 50px">
+              Maximize skill , <br />
+              minimize budget
+            </p>
+            <br />
+            <p style="font-size: 25px; opacity: 0.5">
+              Our modern course acroos a range of in-demand skills will give you
+              the knowledge you need to live the life you want.
+            </p>
+            <br />
+
+            <input type="button" value="Get started" class="getstarted2" />
+          </div>
+
+          <div class="part2">
+            <img src="./image/pexels-andrea-piacquadio-935743.jpg" />
+            <div class="classhours">
+              <p style="opacity: 0.5">Course hours</p>
+              <p style="font-size: 30px"><b>1,451</b></p>
+            </div>
+            <div class="followers">
+              <p style="opacity: 0.5">Followers</p>
+              <p style="font-size: 30px"><b>29k</b></p>
+            </div>
+          </div>
+        </div>
+        <div class="three">
+          <div class="checkout">Checkout our most<br> popuular courses</div>
+
+          <div class="animation">
+                <i class="fa-solid fa-person-running"></i><br><br>
+                <h1>Animation</h1><br>
+                <p style="opacity: 0.5;">Learn the latest animation techniques <br>
+                to create stunning motion design and<br>
+                 captivate your audience</p><br><br>
+                <p style="color: #fd5c63;"> Get started</p> </div>
+                 <div class="design">
+                    <i class="fa-solid fa-book"></i><br><br>
+                    <h1>Design</h1><br>
+                   
+
+                 <p style="opacity: 0.5;">create beautiful usable interfaces to<br>
+                help shape the future of how the web<br>
+            looks</p><br><br>
+        <p style="color: #fd5c63;">Get started</p></div>
+        <div class="photography">
+          <i class="fa-solid fa-camera"></i><br><br>
+          <h1>Photography</h1><br>
+          <p style="opacity: 0.5;">Explore critical fundamentals like <br>
+              lighting , compostion and focus to<br>
+               capture exceptional photos.</p><br><br>
+              <p style="color: #fd5c63;">Get started</p></div>
+
+            </div> 
+        </div>
+      </div>
+      <div class="right">
+        <div class="grid2">
+
+        <div class="crypto">
+          <i class="fa-solid fa-chess-board"></i><br><br>
+          <h1>Crypto</h1><br>
+          <p style="opacity: 0.5;">All ypu need to know to get started<br>
+               investing in crypto . GO from beginner <br>
+               to advanced with this 54 hour course </p>
+               <br><br>
+              <p style="color: #fd5c63;">Get started</p>
+              
+            </div>                   
+               <div class="business">
+                  <i class="fa-sharp fa-solid fa-bag-shopping"></i><br><br>
+                  <h1>Business</h1><br>
+                  
+              <p style="opacity: 0.5;">A step-by-step playbook to help you<br>
+              start , scale , and sustain your businees<br>
+          without outside investment.</p><br><br>
+      <p style="color: #fd5c63;">Get started</p>
+    
+              </div>
+        </div>
+      
+        <footer>
+          <p style="color: white;">skilled</p>
+          <input type="button" value="Get started">
+        </footer>
+      
+      
+
+      
+      </div>
+    </section>
+  </body>
+</html>

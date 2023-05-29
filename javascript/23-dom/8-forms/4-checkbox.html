@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="checkbox" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <p>select anyone</p>
+      <label for="english">
+        <input
+          type="checkbox"
+          name="subject"
+          id="english"
+          value="english"
+        />English</label
+      >;
+      <label for="maths">
+        <input type="checkbox" name="subject" id="maths" value="maths" />Maths
+      </label>
+      <label for="physics">
+        <input
+          type="checkbox"
+          name="subject"
+          id="physics"
+          value="physics"
+        />physics
+      </label>
+      <label for="chemistry">
+        <input
+          type="checkbox"
+          name="subject"
+          id="chemistry"
+          value="chemistry"
+        />chemistry
+      </label>
+      <p>
+        <button id="btn">submit</button>
+      </p>
+    </form>
+    <p id="result"></p>
+    <script>
+      let btn = document.querySelector("#btn");
+      let result = document.querySelector("#result");
+      let allOptions = document.querySelectorAll("[type='checkbox']");
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        // for (const allOption of allOptions) {
+        // allOption.addEventListener("change", (e) => {
+        //   e.preventDefault();
+        //   console.log(allOption.value);
+        let checkbtns = document.querySelectorAll("[type='checkbox']:checked");
+        let checkbtnsArray = Array.from(checkbtns).map((ele) => ele.value);
+
+        result.textContent =
+          checkbtnsArray.length != 0
+            ? `you selected:${checkbtnsArray.join(", ")}`
+            : "you not selected any options";
+      });
+
+      // or it can also be done through change
+    </script>
+  </body>
+</html>

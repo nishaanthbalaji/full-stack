@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descrption" content="String" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //String
+      // 1. double quote
+      // 2. single quote
+      //   3. backtick
+      let name = " john";
+      let city = "chennai";
+      let nameCity = `user name:${name} and user city :${city}`;
+      console.log(name);
+      console.log(city);
+      console.log(nameCity);
+
+      let backtick = `hello , welcome to strings`;
+      let doubleQuote = "hello , welcome to strings";
+      console.log(backtick);
+      console.log(doubleQuote);
+      console.log(backtick === doubleQuote);
+
+      // characters
+      // string made up of group of characters
+      //string is immutable
+
+      // eg: let name = "nishaanth";
+      //        name ="kavin"
+      //        i can change the value like this
+      //        but i cannot access the character in string speretely n change it is value only so string is immutable
+      //        eg in name="kavin"
+      //        i cannot access "a" seperately and cannot change to "e" so it is imuutable
+      // each letter is considered to be a character
+      // "hello" ==> h-e-l-l-o
+      // postion===> 0-1-2-3-4
+
+      // 1] using position
+      // 2] charAt()
+
+      let str = "hello, world";
+      // position
+      // syntax
+      // varName[position]
+
+      console.log(str[0]);
+      console.log(str[1]);
+      console.log(str[2]);
+      console.log(str[3]);
+      console.log(str[4]);
+
+      //length ==> return number characters in the given string
+      console.log(str.length);
+
+      for (i = 0; i <= 11; i++) {
+        console.log(str[i]);
+      }
+
+      for (i = 0; i < str.length; i++) {
+        console.log(str[i]);
+      }
+
+      //accessing the last character in the given string
+      console.log(str[str.length - 1]);
+
+      // str.at();
+      console.log(str.at(-3));
+
+      //str.charAt()
+      //syntax
+      // varname.chartAt(pos)
+      console.log(str.charAt(2));
+
+      // loop
+      for (const character of str) {
+        console.log(character);
+      }
+
+      //   changing the case
+      //   str.toUpperCase()
+      //   str.toLowerCase()
+
+      console.log(str.toUpperCase());
+      console.log(str.toLowerCase());
+    </script>
+  </body>
+</html>

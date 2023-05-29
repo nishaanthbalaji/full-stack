@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="array" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let students = [
+        { id: 1001, name: "john", age: "20", dept: "cse" },
+        { id: 1002, name: "jack", age: "20", dept: "it" },
+        { id: 1003, name: "marry", age: "18", dept: "ece" },
+        { id: 1004, name: "robbert", age: "21", dept: "eee" },
+        { id: 1005, name: "prince", age: "20", dept: "mech" },
+        { id: 1006, name: "ram", age: "23", dept: "civil" },
+      ];
+      // let newStudents = students.map((student) => {
+      //     return {
+      //        ...students,
+      //        college: "skill safari",
+      //      };
+      //  });
+
+      let newStudents = students.map((student) => {
+        return {
+          ...student,
+          college: "SkillSafari",
+        };
+      });
+
+      console.log(newStudents);
+
+      //arr.reverse()
+      // let num = [1, 2, 3, 4, 5];
+      // console.log(num.reverse());
+
+      let sttudent = [
+        { id: 1001, name: "john", age: 20, dept: "cse" },
+        { id: 1002, name: "jack", age: 20, dept: "it" },
+        { id: 1003, name: "marry", age: 18, dept: "ece" },
+        { id: 1004, name: "robbert", age: 21, dept: "ece" },
+        { id: 1005, name: "prince", age: 20, dept: "mech" },
+        { id: 1003, name: "ram", age: 23, dept: "civil" },
+      ];
+
+      let eceAge = sttudent
+        .filter((element) => element.dept === "ece")
+        .reduce((acc, element) => acc + element.age, 0);
+      console.log(eceAge);
+    </script>
+  </body>
+</html>

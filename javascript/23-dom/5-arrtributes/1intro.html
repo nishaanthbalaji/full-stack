@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="attributes" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="para">this is paragraph</p>
+    <button id="but">button</button>
+    <script>
+      // dom attributes
+      //1. setAttribute()
+      // 2. getAttribute()
+      // 3. removeAttribute()
+      // 4. hasAttribute()
+
+      // setAttribute()
+      // syntax
+      // ele.setAttribute("key" , "value")
+
+      let para = document.querySelector("#para");
+      para.setAttribute("class", "demo");
+      console.log(para);
+
+      // getAttribute( "key");
+      console.log(para.getAttribute("id"));
+
+      // removeAttribute("key");
+      para.removeAttribute("id");
+      console.log(para);
+
+      // hasAttribute("key");
+      console.log(para.hasAttribute("id"));
+      console.log(para.hasAttribute("class"));
+
+      // there are some attributes which will have only key we can add that like this
+      //document.querySelector("#but").setAttribute("diasbled", "");
+      document.querySelector("#but").setAttribute("disabled", "");
+    </script>
+  </body>
+</html>

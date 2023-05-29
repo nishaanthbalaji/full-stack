@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descripton" content="conditional-branching" />
+    <title>conditional branching</title>
+  </head>
+  <body>
+    <h1>conditional-branching</h1>
+    <script>
+      //   {
+      //     let a = 10;
+      //     let b = 20;
+      //     let c = a + b;
+      //     console.log(c);
+      //   }
+      //   let d = 10;
+      //   let e = 15;
+      //   if (d < e) {
+      //     console.log(" d is greater than e");
+      //   }
+      //   console.log("after this statement");
+      //   //   Number =>odd r even;
+      //   //   even=12 % 2=0
+      //   //   odd= 15 % 2= 0;
+      //   let number = +prompt("enter the number", 0);
+      //   if (number % 2 == 0) {
+      //     console.log(`the entered  number is ${number} is even number`);
+      //   } else {
+      //     console.log(`the entered number is ${number} is odd number`);
+      //   }
+      //   1)age>=18
+      //   1) weight>=60
+      //   3)blood pressure>=100
+      //   4)bloodgroup==true
+      //   5)diease==false
+      //   6=alchool==false
+      let name = prompt("enter the name");
+      let age = +prompt("enter the donor age", 18);
+      let weight = +prompt("enter the donor weight", 60);
+      let bloodpressure = +prompt("enter the blood presuure", 100);
+      let bloodgroup = prompt("donor od same blood group?");
+      let dieases = prompt("donor has any diease?");
+      let alchool = prompt("donor consumed alchool?");
+      if (age < 18) {
+        console.log("DONOR IS IN ELIGIBLE ");
+      } else if (weight < 60) {
+        console.log("DONOR IS IN ELIGIBLE");
+      } else if (bloodpressure > 100) {
+        console.log("DONOR IS IN ELIGIBLE");
+      } else if (bloodgroup === "false") {
+        console.log("DONOR IS IN ELIGIBLE");
+      } else if (dieases === "true") {
+        console.log("DONOR IS IN ELIGIBLE");
+      } else if (alchool === "true") {
+        console.log("DONOR IS IN ELIGIBLE");
+      } else {
+        console.log("----------------------");
+        console.log("user details");
+        console.log("----------------------");
+        console.log(`NAME:${name}`);
+        console.log(`AGE:${age}`);
+        console.log(`WEIGHT:${weight}`);
+        console.log(`BLOOD PRESSURE:${bloodpressure}`);
+        console.log(`BLOOD GROUP:${bloodgroup}`);
+        console.log(`DIEASES:${dieases}`);
+        console.log(`ALCHOOL:${alchool}`);
+        console.log("DONOR IS ELIGIBLE TO DONATE");
+      }
+
+      // if only two conditions exists we can use short hand property for conditional operators
+      // Syntax
+      //  condition ? true:false
+      let username = prompt("enter the user name");
+      let input = username.toLowerCase();
+      input === "john"
+        ? console.log(`welcome${username}`)
+        : console.log(`welcome guest user`);
+    </script>
+  </body>
+</html>

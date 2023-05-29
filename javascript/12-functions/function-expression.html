@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descripton" content="function-expression" />
+
+    <title>function-expression</title>
+  </head>
+  <body>
+    <script>
+      // function expression
+      let num = 10;
+      console.log(num);
+      //   Syntax
+      //   declaration;
+      //   let varname= function(){
+      //     function body
+      //   }
+
+      // calling
+      // varname()
+
+      let sum = function () {
+        let numOne = 20;
+        let numTwo = 40;
+        let result = numOne + numTwo;
+        console.log(result);
+      };
+      sum();
+      let display = function (name = "prince") {
+        console.log(`welcome  ${name}`);
+      };
+      display();
+      display("vil");
+      display("robert");
+      display("marry");
+      //   return
+      let square = function (number) {
+        return (multi = number * number);
+        // return multi;
+      };
+      console.log(square(5));
+      //   function declaration vs function expression
+      disp(15);
+      function disp(age) {
+        console.log(age);
+      }
+      // displaycity("chennai");
+      let displaycity = function (city) {
+        console.log(city);
+      };
+      let funOne = function (numOne, numTwo) {
+        console.log(numOne + numTwo);
+      };
+      funOne(10, 20);
+      let funTwo = funOne;
+      funTwo(7, 10);
+
+      //   displaycity("chennai");
+      function getname(firstNam, lastNam, displ) {
+        //let firstNam="john", lastNam="jack", displ=dName;
+        let name = `${firstNam}, ${lastNam}`;
+        dName(name);
+      }
+      let dName = function (name) {
+        console.log(name);
+      };
+      getname("john", "jack", dName);
+    </script>
+  </body>
+</html>

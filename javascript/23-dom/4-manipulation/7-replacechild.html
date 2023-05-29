@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="replacechild" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>replacechild</h2>
+    <div id="demo">
+      <h2>heading two</h2>
+      <p>this is paragraph</p>
+      <h3>heading three</h3>
+    </div>
+    <script>
+      // syntax
+      //parentEle.replacechild(newchild , oldchild)
+      let demo = document.querySelector("#demo");
+      let newEle = document.createElement("h4");
+      newEle.textContent = "new child";
+      demo.replaceChild(newEle, demo.lastElementChild);
+    </script>
+  </body>
+</html>

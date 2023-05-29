@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descripton" content="object-refernce" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //
+      // object refernce
+      // primitive datatypes=>copy by value
+      let name = "john";
+      let newName = name;
+      console.log(name);
+      console.log(newName);
+      name = "jack";
+      console.log(name);
+      console.log(newName);
+
+      //   non-primitive==>copy by reference
+
+      let objOne = { name: "john" };
+      let objTwo = objOne;
+      console.log(objOne);
+      console.log(objTwo);
+      objOne.age = 30;
+      console.log(objOne);
+      console.log(objTwo);
+      objTwo.city = "palladam";
+      console.log(objOne);
+      console.log(objTwo);
+
+      // object.assign(destionobj, sourceobj1, source obj2)
+      // cloning n merging
+      let nname = { name: "joe" };
+      let age = { age: 30 };
+      let city = { city: "chennai" };
+      let userdetails = {};
+      Object.assign(userdetails, nname, age, city, { isAdmin: true });
+      console.log(userdetails);
+
+      age.newAge = 50;
+      console.log(age);
+      console.log(userdetails);
+
+      let jack = {
+        address: {
+          city: "chennai",
+          state: "tn",
+        },
+      };
+      Object.assign(userdetails, jack);
+      console.log(userdetails);
+      console.log();
+
+      let address1 = {
+        city: "chennai",
+        state: "tn",
+      };
+      let address2 = {};
+      console.log("before", address2);
+      for (const key in address1) {
+        address2[key] = address1[key];
+      }
+      console.log("after", address2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ifelse" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // let name = prompt("enter the name");
+      // let age = prompt("enter the donor age", 18);
+      // let weight = prompt("enter the donor weight", 60);
+      // let bloodpressure = prompt("enter the blood presuure", 100);
+      // let bloodgroup = Boolean(prompt("donor od same blood group?"));
+      // let dieases = Boolean(prompt("donor has any diease?"));
+      // let alchool = Boolean(prompt("donor consumed alchool?"));
+      // if (age <= 18) {
+      //   console.log("donor is ineligible");
+      // } else if (weight < 60) {
+      //   console.log("donor is in eligible");
+      // } else if (bloodpressure < 100) {
+      //   console.log("donor is ineligible");
+      // }
+      let name = prompt("enter the name");
+      let age = +prompt("enter the donor age", 18);
+      let weight = +prompt("enter the donor weight", 60);
+      let bloodpressure = +prompt("enter the blood presuure", 100);
+      let bloodgroup = prompt("donor od same blood group?");
+      let dieases = prompt("donor has any diease?");
+      let alchool = prompt("donor consumed alchool?");
+      if (age < 18) {
+        console.log("DONOR IS IN ELIGIBLE ");
+      } else if (weight < 60) {
+        console.log("DONOR IS IN ELIGIBLE");
+      } else if (bloodpressure > 100) {
+        console.log("DONOR IS IN ELIGIBLE");
+      } else if (bloodgroup === "false") {
+        console.log("DONOR IS IN ELIGIBLE");
+      } else if (dieases === "true") {
+        console.log("DONOR IS IN ELIGIBLE");
+      } else if (alchool === "true") {
+        console.log("DONOR IS IN ELIGIBLE");
+      } else {
+        console.log("----------------------");
+        console.log("user details");
+        console.log("----------------------");
+        console.log(`NAME:${name}`);
+        console.log(`AGE:${age}`);
+        console.log(`WEIGHT:${weight}`);
+        console.log(`BLOOD PRESSURE:${bloodpressure}`);
+        console.log(`BLOOD GROUP:${bloodgroup}`);
+        console.log(`DIEASES:${dieases}`);
+        console.log(`ALCHOOL:${alchool}`);
+        console.log("DONOR IS ELIGIBLE TO DONATE");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="animation" />
+    <title>animation</title>
+    <style>
+      .animation {
+        height: 100vh;
+        background: #16bffd; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #cb3066,
+          #16bffd
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #cb3066,
+          #16bffd
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        text-align: center;
+        font-size: 30px;
+        position: relative;
+      }
+      H1,
+      P {
+        position: relative;
+        top: 250px;
+      }
+      h1 {
+        animation-name: animation;
+        animation-duration: 3s;
+        animation-timing-function: ease;
+      }
+      p {
+        animation: para;
+        animation-duration: 3s;
+        animation-timing-function: ease;
+      }
+      @keyframes animation {
+        0% {
+          transform: translateY(-200px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+        /* 100% {
+          transform: translateY(400px);
+        } */
+      }
+      @keyframes para {
+        0% {
+          transform: translateY(200px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animation">
+      <h1>FULL STACK WEBDEVELOPMENT</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed unde
+        aliquam doloribus magnam ipsum quia perspiciatis voluptates cum magni
+        accusamus. Quasi, temporibus. Quibusdam, architecto quae aperiam
+        voluptas dolore quidem dignissimos voluptate neque vitae? Odit quidem,
+        expedita nulla natus sint eaque distinctio, beatae eligendi earum
+        consectetur architecto? Sunt facere consequuntur exercitationem?
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="login" />
+    <title>register</title>
+  </head>
+  <body>
+    <h2>welcome<span id="username"></span></h2>
+    <p><input type="button" value="logout" id="logout" /></p>
+    <hr />
+    <h3>your details</h3>
+    <p id="display"></p>
+    <p id="email"></p>
+    <p id="password"></p>
+    <script>
+      let userDetails = sessionStorage;
+      console.log(userDetails);
+      let username = document.querySelector("#username");
+      let displayname = document.querySelector("#display");
+      let email = document.querySelector("#email");
+      let password = document.querySelector("#password");
+      let key = sessionStorage.key(1); // this method wont work in object this key will work only in case of session storage
+
+      //.no specific method to get value using the key in get ()
+
+      console.log(key);
+      let details = JSON.parse(sessionStorage.getItem(key));
+      console.log(details);
+      username.textContent = details.username;
+      display.textContent = details.username;
+      email.textContent = details.email;
+      password.textContent = details.password;
+
+      let logout = document.querySelector("#logout");
+      logout.addEventListener("click", () => {
+        let idUrl = new URLSearchParams(location.search); // this is used to take the id located in the top n assinging to the variable output  will be a map
+
+        console.log(idUrl.values()); //.values() is used to take only value given in url but i cant  see that in output
+        let [id] = idUrl.values();
+        console.log(id); // if i do destructuring then only i can take the output
+        // i can see wt is there in top so if two r three items are in url i can see the order in the url n then destructure
+        sessionStorage.removeItem(id);
+        alert("user loggedout successfully");
+        window.location.href = "./register.html";
+      });
+    </script>
+  </body>
+</html>

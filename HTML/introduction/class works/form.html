@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="form" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="./result.html" method="post">
+      <fieldset>
+        <legend>user inputs</legend>
+      <table>
+        <tr>
+          <td><label for="first name"> Enter the first name </label></td>
+          <td>
+            <input
+              type="text"
+              name="first name"
+              id="first name"
+              placeholder="enter the name"
+              autocomplete="off"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="last name"> Enter the last name</label></td>
+          <td>
+            <input
+              type="text"
+              name="lastname"
+              id="lastname"
+              placeholder="enter the last name"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <label for="password"> Enter the password </label>
+          </td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="enter the password"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="password"> RE enter the password </label>
+          </td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="REenter the password"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email"> EMAIL ID</label></td>
+          <td>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="enter the email"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="mobile-number"> mobile number</label></td>
+          <td>
+            <input
+              type="number"
+              name="mobile-number"
+              id="mobile-number "
+              placeholder="mobile-number"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label type="dob"> DOB</label></td>
+          <td><input type="date" name="dob" id="dob" /></td>
+        </tr>
+        <tr>
+          <td>
+            <label for="gender"> Gender </label>
+            <input type="radio" name="gender" id="gender-male" />
+            <span>male</span>
+            <input type="radio" name="Gender" id="gender-female" />
+            <span>female</span>
+            <input type="radio" name="Gender" id="Gender-other" />
+            <span>other</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="hobbies"> hobbies</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox" name="hobbies" id="hobbies-football" /><span
+              >football</span
+            >
+            <input type="checkbox" name="hobbies" id="hobbies-cricket" /><span
+              >CRICKET</span
+            >
+            <input type="checkbox" name="hobbies" id="hobbies-READING" /><span
+              >READING</span
+            >
+            <input
+              type="checkbox"
+              name="hobbies"
+              id="hobbies-TRAVELLING"
+            /><span> TRAVELLING</span>
+          </td>
+        </tr>
+        <TR>
+            <TD><label for="MULTIPLE SUBJECTS"> MULTIPLE SUBJECTS</label></TD>
+            <TD><select name="MULTIPLE-SUBJECTS" id="MULTIPLE-SUBJECTS" multiple>
+                <option value="ENGLISH">ENGLISH</option>
+                <option value="MATHS">MATHS</option>
+                <option value="PHYSICS">PHYSICS</option>
+                <option value="CHEMISTRY">CHEMISTRY</option></select></TD>
+        </TR>
+            
+        <tr>
+            <TD></TD> <label for="file"> UPLOAD MARKSHEET</label></TD>
+            <td><input type="file" name="file" id="file"></td></tr>
+            <
+
+          
+        
+      </table>
+    </fieldset>
+    <fieldset>
+      <legend> buttons</legend>
+      <table>
+        
+          <tr><td> <input type="submit" value="register"></td></tr>
+          <td><input type="reset" value="clear"></td>
+        
+      </table>
+    </fieldset>
+    </form>
+  </body>
+</html>

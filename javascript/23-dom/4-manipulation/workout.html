@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="dom" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <ul id="list">
+      <li class="list-items">home</li>
+      <li class="list-items">about</li>
+      <li class="list-items">projects</li>
+      <li class="list-items">awards</li>
+      <li class="list-items">contact</li>
+    </ul>
+    ;
+    <script>
+      //   <ul id="list">
+      //     <li class="list-items">home</li>
+      //     <li class="list-items">about</li>
+      //     <li class="list-items">projects</li>
+      //     <li class="list-items">awards</li>
+      //     <li class="list-items">contact</li>
+      //   </ul>;
+
+      let contact = document.querySelectorAll(".list-items")[4];
+      console.log(contact);
+
+      console.log(contact.parentNode);
+    </script>
+  </body>
+</html>

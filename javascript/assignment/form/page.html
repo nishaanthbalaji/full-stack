@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="page" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      id="search"
+      name="search"
+      placeholder="enter the product"
+    />
+    <input type="button" id="button" value="search" />
+    <div id="product"></div>
+    <script>
+      let product = document.querySelector("#product");
+      let items = [];
+      async function fetchData(url) {
+        try {
+          let req = await fetch(url);
+          console.log(req);
+          let res = await req.json();
+          console.log(res);
+          items = [...res];
+          console.log(items);
+          let add = items.map((ele) => {
+            return `<div id=product-id${ele.id}>
+            <p><strong>TITTLE:</strong>${ele.title}</p>
+            <p><strong>DESCRIPTION</strong>:${ele.description}</p>
+            <p><strong>CATEGORY:</strong>${ele.category}</p>
+            <img src=${ele.image} alt=${ele.id} height="100px" width="100px">
+            <p><strong>PRICE:</strong>${ele.price}</p>
+            <p><strong>RATING</strong>${ele.rating.rate}</p>
+            <p><strong>COUNT</strong>${ele.rating.count}</p> 
+            <hr/> </div>`;
+          });
+          product.innerHTML = add.join(" ");
+        } catch (error) {
+          alert("prduct not found");
+        }
+      }
+
+      fetchData("https://fakestoreapi.com/products");
+
+      let btn = document.querySelector("#button");
+      let searchStr = document.querySelector("#search");
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        console.log(items);
+        let filterProducts = items.filter((product) => {
+          return product.title.includes(searchStr.value);
+        });
+        console.log(filterProducts);
+        let productArr = filterProducts.map((product) => {
+          return `<div id=product-${product.id}>
+              <p><strong>TITTLE:<strong>${product.title}</p>
+              <p><strong>DESCRIPTION:</strong>${product.description}</p>
+                <p><strong>CATEGORY:</strong>${product.category}</p>
+                <img src=${product.image} alt=product-${product.id} height="100px" width="100px">
+                <p><strong>Price:</strong>${product.price}</p>
+                <p><strong>Rating:</strong>${product.rating.rate}</p>
+                <p><strong>COUNTING:</strong>${product.rating.count}</p>
+                </div>
+                <hr/>`;
+        });
+        product.innerHTML = productArr;
+      });
+    </script>
+  </body>
+</html>

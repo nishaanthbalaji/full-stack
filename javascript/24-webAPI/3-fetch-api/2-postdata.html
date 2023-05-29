@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="fetch api-post data" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>fetch api-post data</h2>
+    <form action="#" id="form">
+      <p>
+        <input
+          type="text"
+          name="tittle"
+          id="title"
+          placeholder="enter the tittle"
+        />
+      </p>
+      <p>
+        <textarea
+          name="description"
+          id="description"
+          cols="21"
+          rows="5"
+          placeholder="enter the description"
+        ></textarea>
+      </p>
+      <p>
+        <input type="submit" id="submit-btn" value="submit" />
+        <input type="reset" id="reset-btn" value="reset" />
+      </p>
+    </form>
+    <script>
+      // fetch API- post data
+
+      // fetch(a , b)
+      // a=>url
+      // b>form options object(optional)
+
+      //1}POST
+      // fetch(url, formOptions)
+      //example
+      //fetch("http://www.flipkart.com" ,{     // form options object wil be in object
+      // method:"POST";
+      // body: new FormData(form)      //BODY => in what form i have data is form
+      //})
+      // FOR this i wont get id because after storing(post) only i will get id
+
+      //2}GET
+      //fetch(url)  + id;
+      // ex: fetch("http://www.flipkart.com")
+
+      //3}PATCH
+      //patch means update
+      // fetch(url , formOptions)  + id;
+      // ex:
+      // fetch("http://www.flipkart.com" , {
+      //method:"PATCH/PUT"        // in this i use patch to update any one data . i use put to edit all the data
+      //body:new FormData(form)
+      //})
+
+      // 4}DELETE
+      //fetch(url)  + id;
+      //ex: fetch("http://www.flipkart.com")
+
+      // get n delete form options object wont be there because i dont need any data here using this i will get n delete the data
+
+      let form = document.querySelector("#form");
+      let btn = document.querySelector("#submit-btn");
+
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        postData("https://jsonplaceholder.typicode.com/posts");
+      });
+      // im using asyn in function expression
+      let postData = async (url) => {
+        let req = await fetch(url, {
+          method: "POST",
+          body: new FormData(form),
+        });
+        console.log(req);
+        let res = await req.json();
+        console.log(res);
+      };
+    </script>
+  </body>
+</html>

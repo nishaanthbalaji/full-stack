@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="append" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="subjects">
+      <li>englidh</li>
+      <li>physics</li>
+      <li>maths</li>
+    </ul>
+    <script>
+      // append-prepand
+      // append => add node / nodes to the after the last child of the specified element
+      // prepand => add node / nodes before the first child of the specified element
+
+      //(node) if single element i add no need to put(...)spread opertor
+      // (...node)  if multiple elements are added need to put spread operator
+      let subjectsArray = ["chemistry", "computer"];
+      let subject = document.querySelector("#subjects");
+      let computer = document.createElement("li");
+      computer.textContent = "computer";
+      console.log(computer);
+      subject.append(computer);
+
+      // let newSub = subjectsArray.map((Element) => {
+      //   let newsubjects = document.createElement("li");
+      //   newsubjects.textContent = Element;
+      //   return newsubjects;
+      // });
+      // console.log(newSub);
+      // subjects.append(...newSub);
+      //subjects.prepend(...newSub);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="select" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="#">
+      <p>select option</p>
+      <select name="sub" id="sub" multiple>
+        <option value="English" class="s">english</option>
+        <option value="Maths" class="s">maths</option>
+        <option value="physics" class="s">physics</option>
+        <option value="chemistry" class="s">chemistry</option>
+        <option value="computer" class="s" selected>computer</option>
+      </select>
+      <p>
+        <button id="btn">click</button>
+      </p>
+    </form>
+    <hr />
+    <p id="result"></p>
+    <script>
+      // let btn = document.querySelector("#btn");
+      // let selectedOption = [];
+      // btn.addEventListener("click", (e) => {
+      //   e.preventDefault();
+      //   let optionele = document.querySelector("#sub");
+      //   console.log(optionele);
+      //   console.log(optionele.options); // it will make all the options into html collection
+      //   for (const optionval of optionele.options) {
+      //     if (optionval.selected) {
+      //       selectedOption.push(optionval.value);
+      //     }
+      //   }
+
+      //   console.log(selectedOption);
+      //   document.querySelector("#result").textContent =
+      //     selectedOption.length != 0
+      //       ? `userselected option ${selectedOption.join(", ")}`
+      //       : `user not selected any options`;
+      //   selectedOption = [];
+      // });
+      //doubt to sir
+      // // selectedOption = [];
+      // console.log(selectedOption);
+
+      //2
+
+      // or this can be done like this
+
+      // let select = document.querySelector("#sub");
+      // select.addEventListener("change", (e) => {
+      //   e.preventDefault();
+      //   console.log(select.selectedOptions); // selectedoptions is a proprety in select element using this  i can see the selected options in select element
+
+      //   let array = select.selectedOptions;
+      //   let final = Array.from(array).map((ele) => ele.value);
+      //   let add = final.join(", ");
+      //   let result = document.querySelector("#result");
+      //   result.textContent = add;
+      // });
+
+      // //this is wrong so skip
+      // console.log(select.options);
+      // for (const input of select.options) {
+      //   input.addEventListener("change", (e) => {
+      //     e.preventDefault();
+      //     console.log(input);
+      //     let optionselected = document.querySelector("#sub");
+      //     console.log(optionselected.selected);
+
+      //     console.log(optionselected);
+      //   });
+      // }
+    </script>
+  </body>
+</html>

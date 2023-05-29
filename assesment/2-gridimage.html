@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="grid" />
+    <title>grid image</title>
+  </head>
+  <style>
+    .main {
+      display: grid;
+      grid-template-areas:
+        "a b"
+        "c d";
+    }
+    #one {
+      grid-area: a;
+    }
+    #two {
+      grid-area: b;
+    }
+    #three {
+      grid-area: c;
+    }
+    #four {
+      grid-area: d;
+    }
+  </style>
+  <body>
+    <section class="main">
+      <div id="one">
+        <img
+          src="https://wallpapercave.com/wp/wp1809820.jpg"
+          alt="image1"
+          width="250px"
+          height="250px"
+        />
+        <p>virat kolhi</p>
+      </div>
+      <div id="two">
+        <img
+          src="https://www.hdnicewallpapers.com/Walls/Big/Cricket/Rohit_Sharma_Indian_Cricketer_in_Cricket_World_Cup_2019_4K_Wallpaper.jpg"
+          alt="image2"
+          width="250px"
+          height="250px"
+        />
+        <p>rohit sharma</p>
+      </div>
+      <div id="three">
+        <img
+          src="https://tse2.mm.bing.net/th/id/OIP.C3AbJdjf8fAYtFZ-hkbkaQHaEA?pid=ImgDet&w=206&h=111&c=7"
+          alt="image3"
+          width="250px"
+          height="250px"
+        />
+        <p>kl rahul</p>
+      </div>
+      <div id="four">
+        <img
+          src="https://tse1.mm.bing.net/th/id/OIP.RsaRSCQs7trtH4itLa9txQHaFk?pid=ImgDet&w=206&h=155&c=7"
+          alt="image4"
+          width="250px"
+          height="250px"
+        />
+        <p>dhoni</p>
+      </div>
+    </section>
+  </body>
+</html>

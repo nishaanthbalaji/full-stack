@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="style" />
+    <title>Document</title>
+  </head>
+  <style>
+    .newstyle {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  </style>
+  <body>
+    <ul id="list" class="one unorder">
+      <li><a href="#"> home </a></li>
+      <li><a href="#">about</a></li>
+      <li><a href="#">projects</a></li>
+      <li><a href="#">contact</a></li>
+    </ul>
+    <button id="addbtn">add</button>
+    <button id="removeBtn">remove</button>
+    <button id="tooglebtn">toggle</button>
+    <script>
+      //style object
+      let list = document.querySelector("#list");
+      // console.log(list.style);
+
+      // list.style.display = "flex";
+      // list.style.justifyContent = "space-around";
+      // list.style.paddingLeft = "0px";
+      // for (const liEle of list.children) {
+      //   liEle.style.listStyle = "none";
+      //   liEle.firstElementChild.style.textDecoration = "none"; // li's first child is <a> can be choosen
+      //   console.log(liEle);
+      // }
+
+      // className => return all classnames as space separated string
+      console.log(list.className.split(" "));
+
+      // classlist
+      // add()
+      // remove()
+      // contains()
+      //replace()
+      // toggle()
+
+      let addbtn = document.querySelector("#addbtn");
+
+      addbtn.addEventListener("click", () => {
+        list.classList.add("newstyle");
+      });
+
+      let removeBtn = document.querySelector("#removeBtn");
+
+      removeBtn.addEventListener("click", () => {
+        list.classList.remove("newstyle");
+      });
+
+      let toogle = document.querySelector("#tooglebtn");
+      toogle.addEventListener("click", () => {
+        list.classList.toggle("newstyle");
+      });
+
+      console.log(list.classList.contains("newstyle"));
+      list.classList.replace("one", "hello");
+    </script>
+  </body>
+</html>

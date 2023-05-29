@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descrption" content="array" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // object ==> collection of data in key : value pair
+      // array ==> collection of data in sequential order
+
+      // declaration
+      // 1} new array () => new object() ==> constructor method like string mostly we wont use
+      // 2] [] ==> {..}
+
+      // square bracket method
+      //syntax
+      // let arrName=["element1" , "element-2" "element-n"]
+      let fruit = ["apple", "orange", "mango"];
+      //  index==> 0         1           2
+      console.log(fruit);
+
+      //accessing array element by index
+      // syntax
+      // arrName[index]
+      console.log(fruit[0]);
+      console.log(fruit[1]);
+      console.log(fruit[2]);
+      console.log(fruit.length);
+
+      for (i = 0; i < fruit.length; i++) {
+        console.log(fruit[i]);
+      }
+
+      console.log(fruit[3]);
+
+      // add/ update the array elements
+      // syntax
+      // add
+      // arrName[newIndex]= value;
+
+      // update
+      // arrName[existingIndex ]= value;
+
+      let subjects = ["english", "maths", "physics", "chemistry"];
+      console.log(subjects);
+
+      // add
+      subjects[4] = "computer";
+      console.log(subjects);
+
+      // update
+      subjects[2] = "science";
+      console.log(subjects);
+
+      //delete
+      // delete arrname[index];
+
+      delete subjects[3];
+      console.log(subjects);
+
+      // accessing the last element
+      console.log(subjects[subjects.length - 1]);
+
+      // at()
+      console.log(subjects.at(-3));
+
+      // mix of arrays
+      let mixArray = [
+        "john",
+        25,
+        true,
+        { name: "jack", city: "cbe" },
+        ["cricket", "football"],
+
+        function () {
+          console.log("mix of array");
+        },
+      ];
+
+      console.log(mixArray);
+      console.log(mixArray[3].city);
+      console.log(mixArray[4][1]);
+      mixArray[5]();
+
+      // methods ==> add and remove the elements in the array
+      // pop()/ push()
+      // shift ()/ unshift()
+      // arrName.pop()/ arrName.push()
+      // pop()==> remove the  last element in the array
+      //push(elements-1 , elements-2, elements-n)==>  add new elements after yhe last element in the array
+      let sub = ["english", "maths", "physics"];
+      console.log(sub);
+      console.log(sub.pop());
+      console.log(sub);
+
+      // push()
+
+      console.log(sub.push("chemistry ", "computer ", "science"));
+      console.log(sub);
+
+      //  arrName.shift()/ arrName.unshift()
+      // shift ()==> remove first element in the array
+      // unshift( element-1 , element-2, ..... element-n)==>  add new element(s) before the fisrt element
+
+      let subj = ["english ", "maths", "physics"];
+      console.log(subj.shift());
+      console.log(subj);
+
+      console.log(subj.unshift("chemistry", "computer ", "science"));
+      console.log(subj);
+
+      // loops in array
+      //1) for(; ;)
+      // eg : for( i=0; i<str.length; i++){
+      // console.log(i);
+      //}
+
+      //2) for.. of ()
+      // eg: for( const sub of subjects){
+      // console.log(sub)
+      // }
+
+      // 3) for .. in()
+      // eg: for (const sub in subjects){
+      // console.log(sub);
+      //}
+
+      let students = [
+        { name: "john", dept: "cse", age: "20", isPlaced: true },
+        { name: "jack", dept: "ece", age: "21", isPlaced: false },
+        { name: "marry", dept: "eee", age: "18", isPlaced: false },
+        { name: "robbert", dept: "it", age: "19", isPlaced: true },
+      ];
+
+      let placedStudentArray = [];
+
+      for (i = 0; i < students.length; i++) {
+        if (students[i].isPlaced) {
+          placedStudentArray.push(students[i]);
+        }
+      }
+      console.log(placedStudentArray);
+
+      let studentNameStartWithJ = [];
+
+      for (i = 0; i < students.length; i++) {
+        if (students[i].name.startsWith("j")) {
+          studentNameStartWithJ.push(students[i]);
+        }
+      }
+      console.log(studentNameStartWithJ);
+      //example for of
+      let robo = "chiti";
+      for (const type of robo) {
+        console.log(type);
+      }
+
+      let studentAgeGreaterThanAge20 = [];
+      for (const student of students) {
+        if (student.age <= 20) {
+          studentAgeGreaterThanAge20.push(student);
+        }
+      }
+      console.log(studentAgeGreaterThanAge20);
+
+      let studentNameWithA = [];
+      for (const student of students) {
+        if (student.name.includes("a")) {
+          studentNameWithA.push(student);
+        }
+      }
+      console.log(studentNameWithA);
+
+      let studentNameWithO = [];
+      for (i = 0; i < students.length; i++) {
+        if (students[i].name.includes("o")) {
+          studentNameWithO.push(students[i]);
+        }
+      }
+      console.log(studentNameWithO);
+
+      let studentAge20And19 = [];
+      for (const stu of students) {
+        if (stu.age == 19 || stu.age == 20) {
+          studentAge20And19.push(stu);
+        }
+      }
+      console.log(studentAge20And19);
+    </script>
+  </body>
+</html>

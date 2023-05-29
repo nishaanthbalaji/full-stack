@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Descripton" content="boollean" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let bloodgroup = Boolean(prompt("donor  has same blood group?"));
+      let dieases = Boolean(prompt("donor has any diease?"));
+      let alchool = Boolean(prompt("donor consumed alchool?"));
+      //   let bloodgroup = true;
+      //   let dieases = false;
+      //   let alchool = false;
+      if (bloodgroup === false) {
+        console.log("donor  not eligible");
+      } else if (dieases == true) {
+        //in boolean anything given in "" will be considered as true so here we will get "false" but it will converet into true we have make boolean true to fail below condition
+        console.log("donor  not eligible");
+      } else if (alchool == true) {
+        console.log("donor  not eligible");
+      } else {
+        console.log("donor  is  eligible");
+      }
+    </script>
+  </body>
+</html>

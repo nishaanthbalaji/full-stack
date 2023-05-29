@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="login" />
+    <title>login</title>
+  </head>
+  <body>
+    <form action="#" id="signin-form">
+      <p>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="enter the email"
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="enter the password"
+        />
+      </p>
+      <p>
+        not yet registerd<a href="./register.html">click here to register</a>
+      </p>
+      <p>
+        <input type="submit" id="signin" value="submit" />
+        <input type="reset" id="clear" value="reset" />
+      </p>
+    </form>
+    <script>
+      let formfields = document.querySelector("#signin-form");
+      let email = formfields.elements[0];
+      let password = formfields.elements[1];
+
+      let signinBtn = document.querySelector("#signin");
+      signinBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let allusers = Object.entries(localStorage); // object.entries is used to convert list of key n value in a single array of key n value eg["name" , "john"];
+        console.log(allusers); // print key value stored in local storage as array of key n value
+        let user = allusers.find((e) => JSON.parse(e[1]).email === email.value);
+        console.log(user);
+        let userobj = JSON.parse(user[1]);
+        console.log(userobj); // to sent the id to the next page  we convert string into object .if we sent many things to seesion storage we cant  find  in which index it is loctaed if we know id means we can easily use that n get the value
+
+        sessionStorage.setItem(user[0], user[1]);
+        console.log(sessionStorage);
+        window.location.href = `./profile.html?id=${userobj.id}`; // but sending like this is not advisable as there will be no security
+      });
+    </script>
+  </body>
+</html>
